@@ -1,5 +1,5 @@
 (() => {
-  const href = '/Cargo-calculator/favicon.svg?v=bank-tochka-48';
+  const href = 'favicon.svg?v=bank-tochka-48';
 
   function applyFavicon() {
     document.querySelectorAll('link[rel~="icon"]').forEach((link) => {
