@@ -1,0 +1,16 @@
+.drawer-header-title {
+  width: 100%;
+  text-align: center;
+  color: var(--primitive-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-header-title--text-m {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+}
+
+.drawer-header-title--text-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+}

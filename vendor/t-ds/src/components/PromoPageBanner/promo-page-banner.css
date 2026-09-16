@@ -1,0 +1,210 @@
+.promo-page-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 870px;
+  max-height: 481px;
+  border-radius: var(--rounding-5x);
+  background: var(--bg-brand);
+  overflow: hidden;
+}
+
+.promo-page-banner--image-overflow-visible {
+  overflow: visible;
+}
+
+.promo-page-banner__navigation.navigation-bar {
+  display: none;
+}
+
+.promo-page-banner__navigation.navigation-bar-adaptive {
+  display: none;
+}
+
+.promo-page-banner--without-image {
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-right: var(--spacing-10x);
+}
+
+.promo-page-banner__content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing-10x) + var(--spacing-2x));
+  width: 100%;
+  height: 100%;
+  min-width: 350px;
+  padding: calc(var(--spacing-10x) + var(--spacing-2x));
+  box-sizing: border-box;
+}
+
+.promo-page-banner--without-image .promo-page-banner__content {
+  align-items: stretch;
+  justify-content: center;
+  min-height: 250px;
+  padding: calc(var(--spacing-10x) + var(--spacing-2x));
+}
+
+.promo-page-banner__info {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.promo-page-banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4x);
+  width: 100%;
+  color: var(--primitive-default);
+}
+
+.promo-page-banner__title,
+.promo-page-banner__description {
+  width: 100%;
+  margin: 0;
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+}
+
+.promo-page-banner__button-block {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: var(--spacing-8x);
+}
+
+.promo-page-banner__button.button {
+  width: 100%;
+  min-width: 0;
+  max-width: 320px;
+}
+
+.promo-page-banner__image {
+  position: relative;
+  display: flex;
+  flex: 0 0 260px;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 170px;
+  overflow: visible;
+  order: 2;
+}
+
+.promo-page-banner__image-img,
+.promo-page-banner__default-image {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+.promo-page-banner__image-img {
+  object-fit: contain;
+}
+
+.promo-page-banner__default-image {
+  background:
+    linear-gradient(45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--primitive-primary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--primitive-primary) 75%),
+    var(--primitive-default);
+  background-position: 0 0, 0 75px, 75px -75px, -75px 0;
+  background-size: 150px 150px;
+}
+
+@media screen and (max-width: 1023px) {
+  .promo-page-banner {
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1023px;
+    max-height: none;
+    border-radius: 0 0 var(--rounding-5x) var(--rounding-5x);
+  }
+
+  .promo-page-banner--image-overflow-visible {
+    overflow: hidden;
+  }
+
+  .promo-page-banner--without-image {
+    padding-right: 0;
+  }
+
+  .promo-page-banner__navigation.navigation-bar-adaptive {
+    display: grid;
+  }
+
+  .promo-page-banner__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 0;
+  }
+
+  .promo-page-banner--without-image .promo-page-banner__content {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .promo-page-banner__image {
+    flex-basis: auto;
+    align-items: flex-start;
+    width: 100%;
+    height: 330px;
+    min-width: 0;
+    max-width: 100%;
+    order: 0;
+  }
+
+  .promo-page-banner__image-img,
+  .promo-page-banner__default-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .promo-page-banner__info {
+    width: 100%;
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 0 var(--spacing-8x) var(--spacing-8x);
+    box-sizing: border-box;
+  }
+
+  .promo-page-banner__text {
+    align-items: center;
+    gap: var(--spacing-3x);
+    text-align: center;
+  }
+
+  .promo-page-banner__title,
+  .promo-page-banner__description {
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .promo-page-banner__button-block {
+    justify-content: center;
+    padding: var(--spacing-8x) 0 0;
+    box-sizing: border-box;
+  }
+
+  .promo-page-banner__button.button {
+    --button-width: 100%;
+    width: 100%;
+    min-width: 0;
+  }
+}

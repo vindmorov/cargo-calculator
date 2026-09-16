@@ -1,0 +1,85 @@
+:root {
+  --icon-size-2xs: 12px;
+  --icon-size-xs: 16px;
+  --icon-size-s: 20px;
+  --icon-size-m: 24px;
+  --icon-size-l: 32px;
+  --icon-size-18: 18px;
+  --icon-size-30: 30px;
+}
+
+.ds-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--icon-size, var(--icon-size-m));
+  height: var(--icon-size, var(--icon-size-m));
+  color: inherit;
+  line-height: 0;
+}
+
+.ds-icon--2xs {
+  --icon-size: var(--icon-size-2xs);
+}
+
+.ds-icon--xs {
+  --icon-size: var(--icon-size-xs);
+}
+
+.ds-icon--s {
+  --icon-size: var(--icon-size-s);
+}
+
+.ds-icon--m {
+  --icon-size: var(--icon-size-m);
+}
+
+.ds-icon--l {
+  --icon-size: var(--icon-size-l);
+}
+
+.ds-icon--12 {
+  --icon-size: var(--icon-size-2xs);
+}
+
+.ds-icon--16 {
+  --icon-size: var(--icon-size-xs);
+}
+
+.ds-icon--18 {
+  --icon-size: var(--icon-size-18);
+}
+
+.ds-icon--20 {
+  --icon-size: var(--icon-size-s);
+}
+
+.ds-icon--24 {
+  --icon-size: var(--icon-size-m);
+}
+
+.ds-icon--30 {
+  --icon-size: var(--icon-size-30);
+}
+
+.ds-icon--32 {
+  --icon-size: var(--icon-size-l);
+}
+
+.ds-icon svg {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.hoverOpacity {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.hoverOpacity:hover {
+  opacity: 0.5;
+}

@@ -1,0 +1,43 @@
+.drawer {
+  --drawer-width: 480px;
+  --drawer-height: 100vh;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.drawer__overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--drawer-width);
+  max-width: 100vw;
+  height: var(--drawer-height);
+  background: var(--page-primary);
+  box-shadow: var(--Drawer-Right);
+  pointer-events: auto;
+}
+
+.drawer__header,
+.drawer__footer {
+  flex: 0 0 auto;
+}
+
+.drawer__content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+

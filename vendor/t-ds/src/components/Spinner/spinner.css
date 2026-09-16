@@ -1,0 +1,28 @@
+.ds-spinner {
+  --spinner-color: currentColor;
+  --spinner-size: 24px;
+
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  color: var(--spinner-color);
+}
+
+.ds-spinner__ring {
+  position: absolute;
+  inset: var(--spacing-0-5x);
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  border-radius: 50%;
+  animation: ds-spinner-spin 0.75s linear infinite;
+}
+
+@keyframes ds-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

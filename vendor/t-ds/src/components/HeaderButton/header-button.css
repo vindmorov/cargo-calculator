@@ -1,0 +1,97 @@
+.header-button {
+  --header-button-bg: var(--bg-brand);
+  --header-button-bg-hovered: var(--state-bg-brand-active);
+  --header-button-color: var(--primitive-default);
+  --header-button-spinner-color: var(--primitive-default);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2x);
+  min-height: 40px;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  border: 0;
+  border-radius: var(--rounding-2-5x);
+  background: var(--header-button-bg);
+  color: var(--header-button-color);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  appearance: none;
+}
+
+.header-button:hover:not(:disabled):not(.is-loading) {
+  background: var(--header-button-bg-hovered);
+}
+
+.header-button:disabled,
+.header-button.is-disabled {
+  cursor: not-allowed;
+}
+
+.header-button.is-loading {
+  padding: var(--spacing-2x) var(--spacing-3x);
+}
+
+.header-button__label {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.header-button__icon {
+  color: inherit;
+  flex: 0 0 var(--icon-size, var(--icon-size-m));
+  width: var(--icon-size, var(--icon-size-m));
+  height: var(--icon-size, var(--icon-size-m));
+}
+
+.header-button__spinner {
+  --spinner-color: var(--header-button-spinner-color);
+}
+
+.header-button--primary {
+  --header-button-bg: var(--bg-brand);
+  --header-button-bg-hovered: var(--state-bg-brand-active);
+  --header-button-color: var(--primitive-default);
+  --header-button-spinner-color: var(--primitive-default);
+}
+
+.header-button--secondary {
+  --header-button-bg: var(--container-transparent-1);
+  --header-button-bg-hovered: var(--state-container-transparent-1-active);
+  --header-button-color: var(--primitive-brand);
+  --header-button-spinner-color: var(--primitive-brand);
+}
+
+.header-button--danger {
+  --header-button-bg: var(--container-transparent-1);
+  --header-button-bg-hovered: var(--state-container-transparent-1-active);
+  --header-button-color: var(--primitive-error);
+  --header-button-spinner-color: var(--primitive-error);
+}
+
+.header-button.is-disabled {
+  background: var(--container-transparent-1);
+  color: var(--primitive-neutral-3);
+}
+
+.header-button.is-disabled .header-button__spinner {
+  --spinner-color: var(--primitive-neutral-3);
+}
+
+.header-button.is-disabled:hover {
+  background: var(--container-transparent-1);
+}
+
+.header-button.is-loading .header-button__icon {
+  display: none;
+}
+
+.header-button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: var(--spacing-5x) var(--spacing-5x);
+}
+
+.header-button-showcase {
+  width: fit-content;
+}

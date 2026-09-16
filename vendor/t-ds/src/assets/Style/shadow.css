@@ -1,0 +1,25 @@
+:root {
+  /* Surfaces */
+  --Raised: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  --Card: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);
+  --Popout: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+  --Popup-Inverse: 0px 6px 10px 0px rgba(0, 0, 0, 0.1);
+  --Floating: 0px 20px 60px 0px rgba(0, 0, 0, 0.1);
+  --Brand: 0px 20px 40px 0px rgba(126, 89, 224, 0.3);
+  --Drawer-Right: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.2), 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+  --Drawer-Left: inset -1px 0px 0px 0px rgba(255, 255, 255, 0.2), 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+
+  /* States */
+  --Hovered: 0px 12px 25px 0px rgba(0, 0, 0, 0.1);
+  --Pressed: 0px 3px 5px 0px rgba(0, 0, 0, 0.14);
+
+  /* Sticky Shadows */
+  --Sticky-Left: -20px 0px 35px 0px rgba(0, 24, 55, 0.1);
+  --Sticky-Top: 0px -1px 8px 0px rgba(0, 24, 55, 0.1);
+
+  /* Borders */
+  --Top-Line: inset 0px 0.5px 0px 0px rgba(174, 174, 174, 0.45);
+  --Bottom-Line: inset 0px -0.5px 0px 0px rgba(174, 174, 174, 0.45);
+  --Left-Line: inset 0.5px 0px 0px 0px rgba(174, 174, 174, 0.45);
+  --Right-Line: inset -0.5px 0px 0px 0px rgba(174, 174, 174, 0.45);
+}

@@ -1,0 +1,56 @@
+:root {
+  --rounding-24x: 96px;
+  --rounding-20x: 80px;
+  --rounding-16x: 64px;
+  --rounding-14x: 56px;
+  --rounding-12x: 48px;
+  --rounding-10x: 40px;
+  --rounding-8x: 32px;
+  --rounding-6x: 24px;
+  --rounding-5x: 20px;
+  --rounding-4-5x: 18px;
+  --rounding-4x: 16px;
+  --rounding-3-5x: 14px;
+  --rounding-3x: 12px;
+  --rounding-2-5x: 10px;
+  --rounding-2x: 8px;
+  --rounding-1-5x: 6px;
+  --rounding-1x: 4px;
+  --rounding-0-5x: 2px;
+  --rounding-pill: 999px;
+
+
+  /* Buttons */
+  --button-rounding-strong: var(--rounding-3x); 
+  --button-rounding-weak: var(--rounding-2x); 
+
+  /* Cells */
+  --cell-rounding-strong: var(--rounding-3x);
+  --cell-rounding-weak: var(--rounding-2x);
+
+  /* Chips */
+  --chip-rounding-strong: var(--rounding-3x);
+  --chip-rounding-weak: var(--rounding-2x);
+
+  /* Checkbox */
+  --checkbox-rounding: var(--rounding-1x);
+
+  /* Cards */
+  --card-rounding: var(--rounding-3x);
+
+  /* Forms */
+  --form-rounding: var(--rounding-3x);
+  --form-rounding-weak: var(--rounding-2x);
+
+  /* Popups */
+  --popup-rounding-strong: var(--rounding-3x);
+  --popup-rounding-weak: var(--rounding-2x);
+
+  /* Slider */
+  --slider-rounding: var(--rounding-0-5x);
+
+  /* Tags */
+  --tag-rounding-strong: var(--rounding-2x);  
+  --tag-rounding: var(--rounding-1-5x);    
+  --tag-rounding-weak: var(--rounding-1x); 
+}

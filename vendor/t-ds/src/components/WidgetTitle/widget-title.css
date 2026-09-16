@@ -1,0 +1,95 @@
+.widget-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-1x);
+  width: 100%;
+  padding: var(--spacing-5x) var(--spacing-5x) var(--spacing-2-5x);
+  border-radius: var(--rounding-4x) var(--rounding-4x) 0 0;
+  box-sizing: border-box;
+}
+
+.widget-title__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 26px;
+}
+
+.widget-title__main {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1-5x);
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 26px;
+}
+
+.widget-title__title,
+.widget-title__description,
+.widget-title-accessory__link,
+.widget-title-accessory__description {
+  margin: 0;
+}
+
+.widget-title__title {
+  overflow: hidden;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.widget-title__chevron {
+  flex: 0 0 auto;
+  padding-top: var(--spacing-0-5x);
+  color: var(--primitive-primary);
+}
+
+.widget-title__description {
+  width: 100%;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary);
+  word-break: break-word;
+}
+
+.widget-title-accessory {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  min-height: 26px;
+  padding: 0 0 var(--spacing-0-5x);
+  border: 0;
+  background: transparent;
+  color: var(--primitive-primary);
+  text-align: right;
+  appearance: none;
+}
+
+.widget-title-accessory--link,
+.widget-title-accessory--link-icon,
+.widget-title-accessory--icon-icon,
+.widget-title-accessory--editing-mode {
+  gap: var(--spacing-4x);
+}
+
+.widget-title-accessory__icon {
+  color: inherit;
+}
+
+.widget-title-accessory__link {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-brand);
+}
+
+.widget-title-accessory__description {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-secondary);
+}
+
+.widget-title-accessory__none {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+}

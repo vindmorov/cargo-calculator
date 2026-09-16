@@ -1,0 +1,37 @@
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2-5x);
+  padding: var(--spacing-2-5x) var(--page-horizontal-padding) var(--spacing-4x);
+  background: var(--popup-primary);
+}
+
+.modal-footer--empty {
+  min-height: var(--spacing-7-5x);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.modal-footer__description {
+  text-align: center;
+  color: var(--primitive-secondary);
+}
+
+.modal-footer__buttons {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-2-5x);
+}
+
+.modal-footer__buttons--column {
+  flex-direction: column;
+}
+
+.modal-footer__buttons--row {
+  flex-direction: row;
+}
+
+.modal-footer__button.button {
+  width: 100%;
+  min-width: 0;
+}

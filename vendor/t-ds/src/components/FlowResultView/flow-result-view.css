@@ -1,0 +1,52 @@
+/* Снимаем ограничение высоты 620px — высота определяется контентом */
+.flow-result-view__modal {
+  --modal-max-height: calc(100dvh - var(--spacing-16x));
+}
+
+/* Modal уже имеет паддинги в content-inner — сбрасываем, контентная зона управляет своими отступами */
+.flow-result-view__modal .modal__content-inner {
+  padding: 0;
+}
+
+/* Мобильный: полноэкранный режим */
+@media (max-width: 600px) {
+  .flow-result-view__modal {
+    padding: 0;
+  }
+
+  .flow-result-view__modal .modal__panel {
+    width: 100vw;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+}
+
+/* Контентная зона */
+.flow-result-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10x);
+  padding: var(--spacing-5x) var(--spacing-10x) var(--spacing-8x);
+}
+
+.flow-result-view__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8x);
+}
+
+.flow-result-view__title {
+  margin: 0;
+  color: var(--primitive-primary);
+}
+
+.flow-result-view__text {
+  color: var(--primitive-primary);
+}
+
+.flow-result-view__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8x);
+  padding: var(--spacing-4x) 0;
+}

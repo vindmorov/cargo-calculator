@@ -1,0 +1,22 @@
+.bottom-sheet-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2-5x);
+  padding: var(--spacing-4x) var(--page-horizontal-padding);
+}
+
+.bottom-sheet-header__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--primitive-primary);
+}
+
+.bottom-sheet-header__right-accessory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 44px;
+  min-width: 44px;
+  color: var(--primitive-neutral-3);
+}

@@ -1,0 +1,175 @@
+/*
+ * popup-in:  opacity 0→1 за 0.5s, translateY -80→0 за 0.4s (80% от 0.5s)
+ * popup-out: opacity 1→0 за 0.2s (67% от 0.3s), translateY 0→50 за 0.3s
+ */
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  67% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+.animate-popup-in {
+  animation: popup-in 0.5s ease forwards;
+}
+
+.animate-popup-out {
+  animation: popup-out 0.3s ease forwards;
+}
+
+/*
+ * overlay-in:  opacity 0→1, 0.2s ease
+ * overlay-out: opacity 1→0, 0.3s ease, delay 0.2s
+ */
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes overlay-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.animate-overlay-in {
+  animation: overlay-in 0.2s ease forwards;
+}
+
+.animate-overlay-out {
+  animation: overlay-out 0.3s 0.1s ease forwards;
+}
+
+/*
+ * slide-right: панель выезжает справа (translateX 100%↔0)
+ * slide-left:  панель выезжает слева  (translateX -100%↔0)
+ *
+ * in:  0.4s ease
+ * out: 0.4s cubic-bezier(0.32, 0, 0.67, 0) — Ease In Cubic
+ */
+
+@keyframes slide-right-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes slide-right-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes slide-left-in {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes slide-left-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.animate-slide-right-in {
+  animation: slide-right-in 0.4s ease forwards;
+}
+
+.animate-slide-right-out {
+  animation: slide-right-out 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards;
+}
+
+.animate-slide-left-in {
+  animation: slide-left-in 0.4s ease forwards;
+}
+
+.animate-slide-left-out {
+  animation: slide-left-out 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards;
+}
+
+/*
+ * slide-up-in:  translateY(100%)→0, 0.4s ease
+ * slide-up-out: translateY(0)→100%, 0.4s Ease In Cubic
+ */
+
+@keyframes slide-up-in {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes slide-up-out {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+.animate-slide-up-in {
+  animation: slide-up-in 0.4s ease forwards;
+}
+
+.animate-slide-up-out {
+  animation: slide-up-out 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards;
+}
+
+/* footer: выезд снизу и скрытие sticky-футера, 0.3s ease-out */
+
+.animate-footer-in {
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: transform 0.3s ease-out;
+}
+
+.animate-footer-out {
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-footer-in,
+  .animate-footer-out {
+    transition: none;
+  }
+}
+
+/*
+ * tab-content-out: opacity 1→0, 0.2s ease-in-out
+ * tab-content-in:  opacity 0→1, 0.2s ease-in-out, delay 0.3s
+ * Используется в TabsCarousel и Chip variant="tab" для переключения контентных панелей.
+ */
+
+@keyframes tab-content-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes tab-content-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-tab-content-out {
+  animation: tab-content-out 0.2s ease-in-out forwards;
+}
+
+.animate-tab-content-in {
+  animation: tab-content-in 0.2s 0.1s ease-in-out both;
+}

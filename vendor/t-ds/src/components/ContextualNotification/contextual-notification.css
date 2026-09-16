@@ -1,0 +1,106 @@
+.contextual-notification {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-5x);
+  border: 1px solid var(--translucent-primitives-neutral-2);
+  border-radius: var(--rounding-3x);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contextual-notification--extended {
+  align-items: flex-start;
+}
+
+.contextual-notification__accessory {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: var(--spacing-3x) var(--spacing-3x) var(--spacing-3x) 0;
+  color: var(--primitive-brand);
+}
+
+.contextual-notification__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  min-width: 0;
+  padding: var(--spacing-3x) 0;
+  gap: var(--spacing-2x);
+}
+
+.contextual-notification--extended .contextual-notification__accessory {
+  align-items: flex-start;
+}
+
+.contextual-notification__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3x);
+  width: 100%;
+}
+
+.contextual-notification__texts {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: var(--spacing-1-5x);
+}
+
+.contextual-notification__title {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--primitive-primary);
+}
+
+.contextual-notification__text {
+  margin: 0;
+  width: 100%;
+  color: var(--primitive-primary);
+  overflow-wrap: anywhere;
+}
+
+.contextual-notification__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--primitive-neutral-4);
+  appearance: none;
+  cursor: pointer;
+}
+
+.contextual-notification__action {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  width: 100%;
+}
+
+.contextual-notification__action-label {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  color: var(--primitive-brand);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+}
+
+.contextual-notification__spinner {
+  flex-shrink: 0;
+  color: var(--primitive-brand);
+}

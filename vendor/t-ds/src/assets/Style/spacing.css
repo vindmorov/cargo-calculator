@@ -1,0 +1,36 @@
+:root {
+  --spacing-40x: 160px;
+  --spacing-30x: 120px;
+  --spacing-24x: 96px;
+  --spacing-20x: 80px;
+  --spacing-16x: 64px;
+  --spacing-14x: 56px;
+  --spacing-12x: 48px;
+  --spacing-10x: 40px;
+  --spacing-8x: 32px;
+  --spacing-7-5x: 30px;
+  --spacing-7x: 28px;
+  --spacing-6x: 24px;
+  --spacing-5x: 20px;
+  --spacing-4-5x: 18px;
+  --spacing-4x: 16px;
+  --spacing-3-5x: 14px;
+  --spacing-3x: 12px;
+  --spacing-2-5x: 10px;
+  --spacing-2x: 8px;
+  --spacing-1-5x: 6px;
+  --spacing-1x: 4px;
+  --spacing-0-5x: 2px;
+
+   /*Page */
+  --page-top-padding: var(--spacing-8x);
+  --page-bottom-padding: var(--spacing-8x);
+  --page-bottom-padding-with-chat: var(--spacing-16x);
+  --page-horizontal-padding: var(--spacing-5x);
+
+    /* Content */
+  --content-section-list-spacing: var(--spacing-12x);
+  --content-group-list-spacing: var(--spacing-8x);
+  --content-element-list-spacing: var(--spacing-4x);
+  
+}

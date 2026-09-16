@@ -1,0 +1,194 @@
+.dropdown {
+  --dropdown-padding-x: var(--spacing-5x);
+  --dropdown-padding-y: var(--spacing-3x);
+  --dropdown-gap-title: var(--spacing-3x);
+  --dropdown-gap-bottom: var(--spacing-2x);
+  --dropdown-gap-right: var(--spacing-4x);
+  --dropdown-surface: var(--container-transparent-1);
+  --dropdown-border-color: transparent;
+  --dropdown-border-width: 0;
+  --dropdown-focus-ring: inset 0 0 0 0 transparent;
+  --dropdown-title-color: var(--primitive-primary);
+  --dropdown-help-color: var(--primitive-secondary);
+  --dropdown-text-color: var(--primitive-primary);
+  --dropdown-placeholder-color: var(--primitive-neutral-4);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--dropdown-padding-x);
+  border: var(--dropdown-border-width) solid var(--dropdown-border-color);
+  border-radius: var(--rounding-3x);
+  background: var(--dropdown-surface);
+  box-shadow: var(--dropdown-focus-ring);
+  cursor: pointer;
+}
+
+.dropdown:hover:not(.dropdown--static):not(.dropdown--disabled) {
+  --dropdown-surface: var(--state-container-transparent-1-active);
+}
+
+.dropdown:focus-within:not(.dropdown--disabled) {
+  --dropdown-surface: var(--container-transparent-1);
+  --dropdown-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.dropdown--disabled .dropdown__title,
+.dropdown--disabled .dropdown__value {
+  opacity: 0.5;
+}
+
+.dropdown--disabled,
+.dropdown--disabled .dropdown__native,
+.dropdown--disabled .dropdown__help,
+.dropdown--disabled .dropdown__accessory {
+  cursor: not-allowed;
+}
+
+.dropdown--disabled .dropdown__chevron {
+  opacity: 0.5;
+}
+
+.dropdown--disabled:hover {
+  --dropdown-surface: var(--container-transparent-1);
+}
+
+.dropdown__content {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.dropdown__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--dropdown-padding-y) 0;
+  gap: var(--dropdown-gap-bottom);
+}
+
+.dropdown__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  min-height: 18px;
+  min-width: 0;
+}
+
+.dropdown__title {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--dropdown-title-color);
+  white-space: nowrap;
+}
+
+.dropdown__help.ds-icon {
+  --icon-size: 18px;
+
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 18px;
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--dropdown-help-color);
+  cursor: pointer;
+}
+
+.dropdown__help.ds-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown__value {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--dropdown-text-color);
+}
+
+.dropdown__value.is-placeholder {
+  color: var(--dropdown-placeholder-color);
+}
+
+.dropdown__accessory {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 0 0 auto;
+  padding-left: var(--dropdown-gap-right);
+}
+
+.dropdown__accessory--avatar {
+  color: var(--primitive-secondary);
+}
+
+.dropdown__accessory-stack {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2x);
+}
+
+.dropdown__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: var(--primitive-neutral-4);
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.dropdown__chevron svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.dropdown--open .dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  width: 100%;
+  padding-bottom: var(--spacing-3x);
+}
+
+.dropdown__divider {
+  width: 100%;
+  height: 2px;
+}
+
+.dropdown__divider::before {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: calc(var(--spacing-0-5x) / 2);
+  background: var(--translucent-primitives-neutral-2);
+  content: "";
+}
+
+.dropdown__description {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-secondary);
+}
+
+.dropdown--error .dropdown__description {
+  color: var(--primitive-error);
+}
+
+.dropdown--error .dropdown__divider::before {
+  height: 2px;
+  margin-top: 0;
+  background: var(--primitive-error);
+}

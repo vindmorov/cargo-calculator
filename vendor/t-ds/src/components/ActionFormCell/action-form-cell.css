@@ -1,0 +1,151 @@
+.action-form-cell {
+  --action-form-cell-padding-x: 20px;
+  --action-form-cell-padding-y: 15px;
+  --action-form-cell-gap-left: 12px;
+  --action-form-cell-gap-right: 15px;
+  --action-form-cell-surface: var(--container-transparent-1);
+  --action-form-cell-divider-color: var(--container-transparent-1);
+  --action-form-cell-radius: 12px;
+  --action-form-cell-divider-right: 59px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--action-form-cell-padding-x);
+  border: 0;
+  background: var(--action-form-cell-surface);
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.action-form-cell:hover:not(:disabled) {
+  --action-form-cell-surface: var(--state-container-transparent-1-active);
+}
+
+.action-form-cell:active:not(:disabled) {
+  --action-form-cell-surface: var(--state-container-transparent-1-active);
+  opacity: 0.86;
+}
+
+.action-form-cell:focus-visible {
+  outline: 2px solid var(--primitive-brand);
+  outline-offset: 2px;
+}
+
+.action-form-cell:disabled,
+.action-form-cell.is-disabled {
+  cursor: not-allowed;
+}
+
+.action-form-cell--single {
+  border-radius: var(--action-form-cell-radius);
+}
+
+.action-form-cell--stack-top {
+  border-radius: var(--action-form-cell-radius) var(--action-form-cell-radius) 0 0;
+}
+
+.action-form-cell--stack-middle {
+  border-radius: 0;
+}
+
+.action-form-cell--stack-bottom {
+  border-radius: 0 0 var(--action-form-cell-radius) var(--action-form-cell-radius);
+}
+
+.action-form-cell--stack-middle::before,
+.action-form-cell--stack-bottom::before {
+  position: absolute;
+  top: 0;
+  left: var(--action-form-cell-padding-x);
+  right: var(--action-form-cell-divider-right);
+  height: 1px;
+  background: var(--action-form-cell-divider-color);
+  content: "";
+}
+
+.action-form-cell--no-spinner {
+  --action-form-cell-divider-right: var(--action-form-cell-padding-x);
+}
+
+.action-form-cell__content {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  padding: var(--action-form-cell-padding-y) 0;
+}
+
+.action-form-cell__main {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: var(--action-form-cell-gap-left);
+}
+
+.action-form-cell--single.action-form-cell--single-line .action-form-cell__main,
+.action-form-cell--stack-top.action-form-cell--single-line .action-form-cell__main,
+.action-form-cell--stack-middle.action-form-cell--single-line .action-form-cell__main,
+.action-form-cell--stack-bottom.action-form-cell--single-line .action-form-cell__main {
+  align-items: center;
+}
+
+.action-form-cell--single-line .action-form-cell__main {
+  align-items: center;
+}
+
+.action-form-cell__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  color: var(--primitive-brand);
+}
+
+.action-form-cell__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.action-form-cell__text--dual {
+  gap: 2px;
+}
+
+.action-form-cell__title,
+.action-form-cell__description {
+  margin: 0;
+}
+
+.action-form-cell__title {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-brand);
+}
+
+.action-form-cell__description {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-secondary);
+}
+
+.action-form-cell__right {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 0 0 auto;
+  padding-left: var(--action-form-cell-gap-right);
+  color: var(--primitive-brand);
+}
+
+.action-form-cell__spinner {
+  flex-shrink: 0;
+}
