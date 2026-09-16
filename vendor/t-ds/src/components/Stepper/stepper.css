@@ -1,0 +1,54 @@
+.ds-stepper {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2x) var(--spacing-2-5x);
+  background: var(--container-transparent-1);
+  border-radius: var(--rounding-2-5x);
+}
+
+.ds-stepper--m {
+  padding-top: var(--spacing-3x);
+  padding-bottom: var(--spacing-3x);
+}
+
+.ds-stepper__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-6x);
+  height: var(--spacing-6x);
+  padding: 0;
+  border: none;
+  color: var(--primitive-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ds-stepper__button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.ds-stepper__button:disabled {
+  cursor: not-allowed;
+}
+
+.ds-stepper--disabled .ds-stepper__button {
+  color: var(--primitive-neutral-3);
+}
+
+.ds-stepper__button--limit {
+  opacity: 0.5;
+}
+
+.ds-stepper__value {
+  min-width: var(--spacing-10x);
+  text-align: center;
+  color: var(--primitive-primary);
+  user-select: none;
+}
+
+.ds-stepper--disabled .ds-stepper__value {
+  color: var(--primitive-neutral-3);
+}

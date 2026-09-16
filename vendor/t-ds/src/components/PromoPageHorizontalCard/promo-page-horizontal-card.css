@@ -1,0 +1,182 @@
+.promo-page-horizontal-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-10x);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 var(--spacing-10x);
+  border-radius: var(--rounding-4x);
+  background: var(--bg-neutral-1);
+  overflow: hidden;
+}
+
+.promo-page-horizontal-card--image-overflow-visible {
+  overflow: visible;
+}
+
+.promo-page-horizontal-card--image-overflow-visible .promo-page-horizontal-card__image {
+  overflow: visible;
+}
+
+.promo-page-horizontal-card--accent {
+  background: var(--marketing-purple-2-fixed);
+}
+
+.promo-page-horizontal-card__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--spacing-10x);
+  min-width: 0;
+  align-self: stretch;
+  padding: var(--spacing-8x) 0;
+  box-sizing: border-box;
+}
+
+.promo-page-horizontal-card:not(.promo-page-horizontal-card--accent) .promo-page-horizontal-card__content {
+  gap: 0;
+}
+
+.promo-page-horizontal-card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4x);
+  width: 100%;
+  min-width: 0;
+}
+
+.promo-page-horizontal-card__title,
+.promo-page-horizontal-card__description {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: var(--primitive-primary);
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+}
+
+.promo-page-horizontal-card__description {
+  color: var(--primitive-secondary);
+}
+
+.promo-page-horizontal-card--accent .promo-page-horizontal-card__description {
+  color: var(--primitive-primary);
+}
+
+.promo-page-horizontal-card__button.button {
+  width: 100%;
+  min-width: 0;
+  max-width: 320px;
+}
+
+.promo-page-horizontal-card__image {
+  position: relative;
+  display: flex;
+  flex: 0 0 400px;
+  align-self: stretch;
+  width: 400px;
+  min-height: 127px;
+  overflow: hidden;
+}
+
+.promo-page-horizontal-card--accent .promo-page-horizontal-card__image {
+  min-height: 217px;
+}
+
+.promo-page-horizontal-card__image-img,
+.promo-page-horizontal-card__default-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-page-horizontal-card__image-img {
+  object-fit: cover;
+}
+
+.promo-page-horizontal-card__default-image {
+  background:
+    linear-gradient(45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--primitive-primary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--primitive-primary) 75%),
+    var(--primitive-default);
+  background-position: 0 0, 0 50px, 50px -50px, -50px 0;
+  background-size: 100px 100px;
+}
+
+@media screen and (max-width: 1023px) {
+  .promo-page-horizontal-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding: 0;
+}
+
+  .promo-page-horizontal-card--image-overflow-visible {
+    overflow: hidden;
+  }
+
+  .promo-page-horizontal-card--image-overflow-visible .promo-page-horizontal-card__image {
+    overflow: hidden;
+  }
+
+  .promo-page-horizontal-card--accent {
+    align-items: center;
+    padding-top: var(--spacing-4x);
+  }
+
+  .promo-page-horizontal-card__content {
+    order: 0;
+    flex: 0 0 auto;
+    gap: var(--spacing-5x);
+    width: 100%;
+    padding: var(--spacing-8x);
+  }
+
+  .promo-page-horizontal-card--accent .promo-page-horizontal-card__content {
+    order: 1;
+  }
+
+  .promo-page-horizontal-card:not(.promo-page-horizontal-card--accent) .promo-page-horizontal-card__content {
+    gap: 0;
+  }
+
+  .promo-page-horizontal-card__text {
+    gap: var(--spacing-4x);
+  }
+
+  .promo-page-horizontal-card--accent .promo-page-horizontal-card__text {
+    padding-bottom: var(--spacing-4x);
+    box-sizing: border-box;
+  }
+
+  .promo-page-horizontal-card__title,
+  .promo-page-horizontal-card__description {
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .promo-page-horizontal-card__button.button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .promo-page-horizontal-card__image {
+    order: 1;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 250px;
+    min-height: 0;
+  }
+
+  .promo-page-horizontal-card--accent .promo-page-horizontal-card__image {
+    order: 0;
+    width: 100%;
+    height: 200px;
+  }
+}

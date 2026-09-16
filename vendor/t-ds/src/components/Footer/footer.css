@@ -1,0 +1,117 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2x);
+  width: 100%;
+  padding: var(--spacing-3x) var(--spacing-5x);
+  background: var(--page-primary);
+}
+
+.footer--visibility-controlled {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer--with-description-slot {
+  flex-direction: column;
+}
+
+.footer--page-control-button {
+  flex-direction: column;
+}
+
+.footer__description {
+  width: 335px;
+  max-width: 100%;
+  color: var(--primitive-secondary);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.footer__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2x);
+  width: 100%;
+}
+
+.footer__button.button {
+  --button-width: auto;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 320px;
+}
+
+.footer-icon-button.icon-button {
+  flex: 0 0 auto;
+}
+
+.footer__page-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2x);
+}
+
+.footer__page-dot {
+  width: var(--spacing-1-5x);
+  height: var(--spacing-1-5x);
+  padding: 0;
+  border: 0;
+  border-radius: var(--rounding-pill);
+  background: var(--container-transparent-1);
+  cursor: pointer;
+  appearance: none;
+}
+
+.footer__page-dot--selected {
+  background: var(--bg-brand);
+}
+
+.footer__stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 115px;
+  height: 50px;
+  border-radius: var(--rounding-2-5x);
+  background: var(--container-transparent-1);
+}
+
+.footer__stepper-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 100%;
+  padding: 0 var(--spacing-2-5x);
+  border: 0;
+  background: transparent;
+  color: var(--primitive-primary);
+  cursor: pointer;
+  appearance: none;
+}
+
+.footer__stepper-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footer__stepper-value {
+  color: var(--primitive-primary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .footer__button.button {
+    max-width: none;
+  }
+}

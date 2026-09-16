@@ -1,0 +1,870 @@
+/* Local overrides for the Tochka-style trip form controls. */
+.trip-form--flow .settlement-field .input,
+.trip-form--flow .trip-pair--rate > :first-child .input {
+  --input-surface: var(--container-transparent-1);
+  --input-border-color: transparent;
+  --input-border-width: 0;
+  --input-focus-ring: inset 0 0 0 0 transparent;
+  --input-padding-x: var(--spacing-4x);
+  --input-padding-y: var(--spacing-2x);
+  min-height: 64px;
+  justify-content: center;
+  border-radius: var(--rounding-3x);
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.trip-form--flow .settlement-field .input:hover,
+.trip-form--flow .trip-pair--rate > :first-child .input:hover {
+  --input-surface: var(--state-container-transparent-1-active);
+  --input-border-color: transparent;
+}
+
+.trip-form--flow .settlement-field .input:focus-within,
+.trip-form--flow .trip-pair--rate > :first-child .input:focus-within {
+  --input-surface: var(--container-transparent-1);
+  --input-border-color: transparent;
+  --input-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.trip-form--flow .settlement-field [aria-label^="Очистить поле"],
+.trip-form--flow .trip-pair--rate > :first-child [aria-label^="Очистить поле"],
+.trip-form--flow .trip-pair--rate > :first-child .input__accessory {
+  display: none;
+}
+
+.trip-form--flow .trip-route--side {
+  height: 64px;
+  min-height: 64px;
+  align-self: start;
+  border: 1px solid var(--translucent-primitives-neutral-2);
+  border-radius: var(--rounding-3x);
+  background: var(--bg-default);
+}
+
+.trip-form--flow .trip-route--side:hover {
+  border-color: var(--primitive-neutral-4);
+}
+
+.trip-form--flow .trip-pair--rate > .dropdown {
+  min-height: 64px;
+  justify-content: center;
+}
+
+.trip-form--flow .route-distance-field__metric .ds-icon,
+.trip-form--flow .route-distance-field__actions .icon-button:nth-child(1) {
+  display: none;
+}
+.trip-form--flow .route-distance-field--compact { cursor:default; }
+.trip-form--flow .route-distance-field--compact:hover { opacity:1; }
+.trip-form--flow .route-distance-field__metrics { pointer-events:none; }
+.trip-form--flow .tochka-distance-view { width:100%; margin-top:12px; }
+.trip-form--flow .tochka-distance-view { border:0; background:transparent; }
+.trip-form--flow .tochka-distance-view .route-distance-field--compact { cursor:pointer; width:105px; height:52px; min-height:52px; padding:0; border:0; border-radius:12px; background:var(--container-transparent-1); box-shadow:none; justify-content:flex-start; align-items:center; row-gap:8px; column-gap:0; }
+.trip-form--flow .tochka-distance-view .route-distance-field--compact:hover { background:var(--container-transparent-1); }
+.trip-form--flow .tochka-distance-view .route-distance-field__metrics { padding:0; }
+.trip-form--flow .tochka-distance-view .ds-cell__left-area,
+.trip-form--flow .tochka-distance-view .ds-cell__content,
+.trip-form--flow .tochka-distance-view .ds-cell__title { width:100%; min-width:0; height:100%; }
+.trip-form--flow .tochka-distance-view .ds-cell__title { display:flex; align-items:center; }
+.trip-form--flow .tochka-distance-view .route-distance-field__metrics { display:flex; flex-direction:column; justify-content:center; width:100%; min-width:0; padding-right:var(--spacing-8x); }
+.trip-form--flow .tochka-distance-view .route-distance-field__fill,
+.trip-form--flow .tochka-distance-view .route-distance-field { position:relative; }
+.trip-form--flow .tochka-distance-view .ds-cell__right-accessory { position:absolute; inset:0 8px 0 auto; display:flex; align-items:center; }
+.trip-form--flow .tochka-distance-view .route-distance-field__actions { margin:0; }
+.trip-form--flow .tochka-distance-view.is-editing .route-distance-field--compact { box-shadow:inset 0 0 0 2px var(--primitive-brand); }
+.trip-form--flow .trip-route-layout { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 16px; width:100%; }
+.trip-form--flow .trip-pair--route { display:contents; }
+.trip-form--flow .trip-pair--route .settlement-field { width:100%; }
+.trip-form--flow .trip-add-point { grid-column:1 / -1; }
+.trip-form--flow .trip-add-point .button { padding-left:0; padding-right:0; transition:opacity 120ms ease; }
+.trip-form--flow .trip-add-point .button__label.ts-500-s { font-size:16px; }
+.trip-form--flow .trip-add-point .button:hover { background:transparent; opacity:.5; }
+.trip-form--flow .tochka-distance-view { width:100%; margin-top:0; }
+.trip-form--flow .trip-pair--rate { display:grid; grid-template-columns:minmax(0,2fr) minmax(160px,1fr); gap:16px; width:100%; }
+.trip-form--flow .trip-options { grid-column:1 / -1; width:100%; }
+.tochka-options-title { margin:0; }
+.tochka-summary-title { margin:16px 0 0; }
+.tochka-trip-summary { display:grid; grid-template-columns:minmax(180px,1.2fr) minmax(0,2.8fr); gap:16px; align-items:center; width:100%; }
+.tochka-distance-input { grid-column:1; grid-row:1; min-width:0; }
+.tochka-distance-input .input { min-height:64px; border-radius:var(--rounding-3x); }
+.tochka-distance-input__view { --input-surface:var(--container-transparent-1); --input-border-color:transparent; --input-border-width:0; position:relative; display:flex; align-items:center; padding-right:var(--spacing-10x); }
+.tochka-distance-input__view .input__content { padding-block:var(--spacing-2x); }
+.tochka-distance-input__value,
+.tochka-distance-input__duration { margin:0; }
+.tochka-distance-input__duration { color:var(--primitive-primary); }
+.tochka-distance-input__edit { position:absolute; right:var(--spacing-3x); top:50%; width:var(--spacing-6x); height:var(--spacing-6x); padding:0; border:0; color:var(--primitive-primary); background:transparent; cursor:pointer; transform:translateY(-50%); }
+.tochka-distance-input__edit .ds-icon { --icon-size:var(--spacing-6x); }
+.tochka-distance-input__editor { --input-surface:var(--container-transparent-1); --input-border-color:transparent; --input-border-width:0; --input-focus-ring:inset 0 0 0 2px var(--primitive-brand); }
+.tochka-distance-input__editor[hidden],
+.tochka-distance-input__view[hidden] { display:none; }
+.tochka-trip-summary > .trip-route { grid-column:1; grid-row:1; display:block; width:105px; min-width:0; margin:0; }
+.tochka-trip-summary > .trip-route .route-distance-field__sized,
+.tochka-trip-summary > .trip-route .route-distance-field__fill,
+.tochka-trip-summary > .trip-route .route-distance-field { display:block; width:105px; min-width:0; height:52px; min-height:52px; }
+.tochka-trip-summary > .trip-pair--rate { grid-column:2; grid-row:1; display:grid; grid-template-columns:minmax(0,2fr) minmax(160px,1fr); gap:16px; width:100%; min-width:0; margin:0; }
+.tochka-trip-summary > .trip-pair--rate > * { min-width:0; }
+.trip-options__chips { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; width:100%; }
+.trip-options__chips > .tochka-form-cell { display:flex; align-items:center; justify-content:center; width:348px; max-width:100%; height:52px; min-height:52px; padding:12px 20px; border-radius:16px; background:var(--container-transparent-1); text-align:left; font-size:20px; }
+.trip-options__chips > .tochka-option-0 { grid-column:1; grid-row:2; }
+.trip-options__chips > .tochka-option-1 { grid-column:1; grid-row:1; }
+.trip-options__chips > .tochka-option-2 { grid-column:2; grid-row:1; }
+.trip-options__chips > .tochka-form-cell .form-cell__content { justify-content:flex-start; }
+.trip-options__chips > .tochka-form-cell .tochka-chip-switch { margin-left:auto; pointer-events:none; }
+.trip-options__chips > .tochka-form-cell { padding:12px 20px; border-radius:16px; background:var(--container-transparent-1); }
+.trip-options__chips > .tochka-form-cell .form-cell__content { padding:0; }
+.tochka-empty-mileage-input { grid-column:1; grid-row:3; height:64px; min-height:64px; justify-content:center; --input-surface:var(--container-transparent-1); --input-border-color:transparent; --input-border-width:0; --input-focus-ring:inset 0 0 0 2px var(--primitive-brand); --input-padding-x:var(--spacing-4x); --input-padding-y:var(--spacing-2x); border-radius:var(--rounding-3x); }
+.tochka-empty-mileage-input[hidden] { display:none !important; }
+.tochka-option-0.is-selected + .tochka-empty-mileage-input { display:flex !important; }
+
+@media (max-width: 599px) {
+  .trip-form--flow .trip-route-layout,
+  .trip-options__chips { grid-template-columns:minmax(0,1fr); }
+  .trip-options__chips > .tochka-option-0,
+  .trip-options__chips > .tochka-option-1,
+  .trip-options__chips > .tochka-option-2,
+  .tochka-empty-mileage-input { grid-column:1; grid-row:auto; }
+  .tochka-trip-summary { grid-template-columns:1fr; gap:16px; }
+  .tochka-trip-summary > .trip-route,
+  .tochka-trip-summary > .trip-pair--rate { grid-column:1; grid-row:auto; }
+  .tochka-trip-summary > .trip-pair--rate { grid-template-columns:minmax(0,1fr); }
+}
+
+#flow-step-2 > .widget--headless > .widget__content {
+  padding-top: var(--spacing-5x);
+}
+
+#flow-step-item-1 .costs-overview {
+  padding: var(--spacing-5x);
+  box-shadow: var(--Card);
+}
+
+#flow-step-item-1:not(.flow-step--collapsed) .costs-overview {
+  box-shadow: inset 0 0 0 1px var(--bg-neutral-3);
+}
+
+#flow-step-item-1 {
+  margin-bottom: 0;
+  padding-bottom: var(--spacing-8x);
+}
+
+#flow-step-item-1 > .flow-step__body--tight {
+  row-gap: var(--spacing-4x);
+  column-gap: var(--spacing-4x);
+}
+
+#flow-step-item-2 {
+  padding-bottom: var(--spacing-8x);
+}
+
+.page-heading__brand-title {
+  color: #676767;
+  font-weight: 400;
+}
+
+#flow-step-item-1 .flow-step__question {
+  display: none;
+}
+
+#flow-step-1 > .flow-panel {
+  background: #fff;
+  box-shadow: var(--Card);
+}
+
+#flow-step-1 .choice-card:not(.is-selected) {
+  background: var(--container-transparent-1);
+  box-shadow: none;
+}
+
+#flow-step-1 .choice-card:not(.is-selected):hover {
+  background: var(--state-container-transparent-1-active);
+  box-shadow: none;
+}
+
+#flow-step-1 .costs-hint__item:first-child .costs-hint__value--user {
+  color: #000;
+}
+
+#flow-step-item-1 .flow-step__action {
+  display: none;
+}
+
+#flow-step-item-2.flow-step--collapsed .flow-step__header--button {
+  min-height: 0;
+  padding: 20px;
+  border: 0;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--Card);
+}
+
+#flow-step-item-2.flow-step--collapsed .flow-step__action {
+  display: none;
+}
+
+#flow-step-item-2.flow-step--collapsed .flow-step__header--button {
+  position: relative;
+  margin-top: calc(var(--spacing-8x) + var(--spacing-4x));
+}
+
+#flow-step-item-2.flow-step--collapsed .flow-step__title {
+  display: block;
+}
+
+#flow-step-item-2.flow-step--collapsed .flow-step__header--button::before {
+  content: "Шаг 2. Параметры рейса";
+  position: absolute;
+  top: -48px;
+  left: 0;
+  color: var(--primitive-primary);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+#flow-step-item-2.flow-step--collapsed .tochka-trip-summary-view { display:flex; flex-direction:column; row-gap:4px; column-gap:8px; width:100%; }
+#flow-step-item-2.flow-step--collapsed .tochka-trip-summary-view__route { color:var(--primitive-secondary); font-size:14px; line-height:1.25; }
+#flow-step-item-2.flow-step--collapsed .tochka-trip-summary-view__distance { color:var(--primitive-primary); font-size:18px; line-height:1.1; font-weight:500; }
+#flow-step-item-2.flow-step--collapsed .tochka-trip-summary-view__chips { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+#flow-step-item-2.flow-step--collapsed .tochka-trip-summary-view__chips span { display:inline-flex; align-items:center; min-height:40px; padding:0 12px; border-radius:12px; background:var(--container-transparent-1); color:var(--primitive-primary); font-size:14px; white-space:nowrap; }
+
+#flow-step-item-1 .costs-overview[data-expand-control] {
+  cursor: pointer;
+}
+
+#flow-step-item-1 .costs-overview[data-expand-control]:focus-visible {
+  outline: 2px solid var(--primitive-brand);
+  outline-offset: var(--spacing-1x);
+}
+
+#flow-step-1 > .flow-panel > .button,
+#flow-step-2 .flow-trip-footer .button--primary {
+  height: 48px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 12px;
+}
+
+.page-heading__copy {
+  margin-bottom: 32px;
+}
+
+/* Copy refinement without replacing text nodes managed by React. */
+.page-heading__question--wide,
+.page-heading__question--narrow {
+  font-size: 0;
+}
+
+.page-heading__question--wide::after,
+.page-heading__question--narrow::after {
+  content: "Вы зарабатываете на рейсе?";
+}
+
+.page-heading__question--wide::after { font-size: 48px; }
+.page-heading__question--narrow::after { font-size: 32px; }
+
+/* Desktop canvas: keep the calculator at the annotated 870px measure while
+   centering the page column; mobile remains fluid through the base layout. */
+@media (min-width: 1440px) {
+  .page-layout--l .page-layout__content-wrapper {
+    align-items: center;
+  }
+
+  .page-layout--l .page-layout__content {
+    width: 100%;
+    max-width: 870px;
+  }
+
+  .page-layout--l main.app-stack {
+    width: 870px;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+}
+
+.trip-options__chips .chip {
+  --chip-bg: var(--container-transparent-1);
+  --chip-bg-hovered: var(--state-container-transparent-1-active);
+  --chip-border-color: transparent;
+}
+
+.trip-options__chips .tooltip-anchor__trigger:hover {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Match the results card to the neutral step cards. */
+#flow-step-3 section.result-summary {
+  background: var(--container-default);
+  box-shadow: var(--Card);
+}
+
+#flow-step-3 .result-subblocks--merged {
+  border: 1px solid var(--container-default);
+  box-shadow: none;
+}
+
+#flow-step-3 .result-subblocks--merged > .result-subblock--tight:nth-child(1),
+#flow-step-3 .result-subblocks--merged > .result-subblock--tight:nth-child(3) {
+  padding: 0;
+}
+
+#flow-step-3 .metric-row-cost .ds-cell {
+  background: var(--container-default);
+}
+
+#flow-step-3 .accordeon-cell--xl .accordeon-cell__content-row {
+  margin-top: var(--spacing-4x);
+}
+
+.costs-overview__eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  color: var(--primitive-secondary);
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.costs-overview__title {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 2px 0 0;
+  color: var(--primitive-primary);
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.costs-overview__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2x);
+  margin-top: var(--spacing-4x);
+}
+
+.costs-overview__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 var(--spacing-4x);
+  border-radius: var(--rounding-3x);
+  background: var(--container-transparent-1);
+  color: var(--primitive-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.costs-overview--visual .costs-overview__hint,
+.costs-overview--visual .costs-overview__summary {
+  display: none;
+}
+
+.costs-overview--visual .costs-overview__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  row-gap: 0;
+  align-items: start;
+}
+
+.costs-overview--visual .costs-overview__edit {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+/* Collapsed summary card follows the Figma reference while keeping the
+   original edit button and state transitions intact. */
+#flow-step-item-1 .costs-overview {
+  position: relative;
+  min-height: 122px;
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: var(--Card);
+}
+
+#flow-step-item-1 .costs-overview__header {
+  display: block;
+}
+
+#flow-step-item-1 .costs-overview__summary {
+  margin: 0 72px 2px 0;
+  color: var(--primitive-secondary);
+  font-size: 0;
+  line-height: 16px;
+}
+
+#flow-step-item-1 .costs-overview__summary::before {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+#flow-step-item-1 .costs-overview__summary::after {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+#flow-step-item-1 .costs-overview__summary {
+  margin-bottom: 0;
+}
+
+#flow-step-item-1 .costs-overview__summary::before {
+  content: "Выбраны типовые значения";
+  display: block;
+}
+
+#flow-step-item-1 .costs-overview__summary::after {
+  content: "Без НДС, 1 машина (5 т.)";
+  display: block;
+  margin-top: 2px;
+  color: var(--primitive-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+#flow-step-item-1 .costs-overview__edit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: var(--container-transparent-1);
+}
+
+#flow-step-item-1 .costs-overview__edit .button__label {
+  display: none;
+}
+
+#flow-step-item-1 .costs-overview__edit::before {
+  content: "✎";
+  color: var(--primitive-primary);
+  font-size: 24px;
+  line-height: 1;
+}
+
+#flow-step-item-1 .costs-overview__hint {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+#flow-step-item-1 .costs-hint__item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--container-transparent-1);
+  color: var(--primitive-primary);
+  font-size: 0;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+#flow-step-item-1 .costs-hint__item::after {
+  font-size: 11px;
+}
+
+#flow-step-item-1 .costs-hint__item:nth-child(1)::after {
+  content: "Водитель: 80 000 ₽";
+}
+
+#flow-step-item-1 .costs-hint__item:nth-child(2)::after {
+  content: "Топливо: 17,8 л./100 км";
+}
+
+#flow-step-item-1 .costs-hint__item:nth-child(3)::after {
+  content: "Пробег в день: 240 км";
+}
+
+#flow-step-item-1 .costs-overview::after {
+  content: "Ремонт 4 ₽ / км    Ещё +10";
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: var(--primitive-primary);
+  font-size: 11px;
+  white-space: pre;
+}
+
+/* The active step uses the same compact summary treatment as the completed
+   step: a single horizontal row of chips and a generous edit affordance. */
+#flow-step-item-1 .costs-overview {
+  padding: 20px !important;
+  min-height: 180px;
+  border: 0 !important;
+  background: #fff;
+}
+
+#flow-step-item-1 .costs-overview__summary::after {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+#flow-step-item-1 .costs-overview__hint {
+  margin-top: 24px;
+}
+
+#flow-step-item-1 .costs-hint__list {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+#flow-step-item-1 .costs-hint__item {
+  width: fit-content !important;
+  flex: 0 0 auto !important;
+  flex-basis: auto !important;
+  max-width: max-content !important;
+  display: inline-flex !important;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+}
+
+/* Hide the verbose React-owned sentence inside each chip; the concise label
+   is supplied by the chip pseudo-element below. */
+#flow-step-item-1 .costs-hint__item,
+#flow-step-item-1 .costs-hint__item * {
+  font-size: 0 !important;
+}
+
+#flow-step-item-1 .costs-hint__item::after {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#flow-step-item-1 .costs-overview__edit {
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  border-radius: 16px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#flow-step-item-1 .costs-overview__edit::before {
+  font-size: 24px;
+}
+
+#flow-step-item-1 .costs-overview__summary::after {
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+#flow-step-item-1 .costs-overview::after {
+  display: none;
+}
+
+#flow-step-item-1 .costs-hint__list::before,
+#flow-step-item-1 .costs-hint__list::after {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: var(--container-transparent-1);
+  color: var(--primitive-primary);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+#flow-step-item-1 .costs-hint__list::before {
+  content: "Ремонт 4 ₽ / км";
+}
+
+#flow-step-item-1 .costs-hint__list::after {
+  content: "Ещё +10";
+}
+
+.choice-card.is-custom-variant .choice-card__image,
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6) .choice-card__image {
+  display: none;
+}
+
+/* Configurable capacity option: a lightweight edit/configure glyph in the same visual slot as the truck art. */
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6)::before {
+  content: "✎";
+  display: block;
+  height: 40px;
+  color: var(--primitive-neutral-7);
+  font-size: 34px;
+  line-height: 40px;
+  text-align: center;
+}
+
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6)[aria-checked="true"]::before,
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6).is-selected::before {
+  color: var(--primitive-brand);
+}
+
+/* Text-only refinements: keep React-owned markup untouched. */
+#flow-step-item-3 .flow-step__title,
+#flow-step-item-1 .costs-overview__edit .button__label {
+  font-size: 0;
+}
+
+#flow-step-item-3 .flow-step__title::after {
+  content: "Шаг 3 . Результат расчёта";
+  font-size: 20px;
+}
+
+#flow-step-item-1 .costs-overview__edit .button__label::after {
+  content: "Редактировать";
+  font-size: 13px;
+}
+
+.choice-card.is-custom-variant {
+  justify-content: center;
+}
+
+.inline-cost-editor {
+  margin-top: 16px;
+  padding-top: 0;
+}
+.inline-cost-editor__section { border-bottom: 0; padding: 14px 0; }
+.inline-cost-editor__section:not(.is-open) .inline-cost-editor__fields { display:none; }
+.inline-cost-editor__toggle { width:100%; display:flex; justify-content:space-between; align-items:center; border:0; background:none; padding:0; text-align:left; cursor:pointer; }
+.inline-cost-editor__title,.inline-cost-editor__toggle small { display:block; }
+.inline-cost-editor__toggle small { margin-top:4px; color:#777; font-size:16px; }
+.inline-cost-editor__fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-top:16px; }
+.inline-cost-editor__input { position:relative; min-width:0; }
+.inline-cost-editor__input .input__field { padding-right:84px; }
+.inline-cost-editor__dropdown { position:absolute; inset:0; padding:0; background:transparent; pointer-events:auto; }
+.inline-cost-editor__dropdown { background:var(--container-transparent-1); border-radius:12px; }
+.inline-cost-editor__input:has(.inline-cost-editor__dropdown) > .input__content > .input__main { visibility:hidden; }
+.inline-cost-editor__dropdown .dropdown__content { height:100%; padding:0 16px; }
+.inline-cost-editor__dropdown .dropdown__main { justify-content:center; padding:12px 0; row-gap:8px; column-gap:8px; }
+.inline-cost-editor__dropdown .dropdown__header { min-height:18px; }
+.inline-cost-editor__dropdown .dropdown__title { margin:0; }
+.inline-cost-editor__dropdown .dropdown__value { font:inherit; color:var(--primitive-primary); }
+.inline-cost-editor__native-select { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; pointer-events:auto; }
+.inline-cost-editor__vat-popup { pointer-events:all; }
+.inline-cost-editor__vat-option { cursor:pointer; --form-cell-surface:#fff; }
+.inline-cost-editor__vat-option:hover { --form-cell-surface:var(--state-container-transparent-1-active); }
+.inline-cost-editor__vat-option .dropdown-popup__checkmark { color:var(--primitive-success); font-size:20px; line-height:1; }
+.inline-cost-editor__unit { position:absolute; right:16px; bottom:16px; color:var(--primitive-secondary); pointer-events:none; white-space:nowrap; }
+.inline-cost-editor__actions { display:flex; gap:12px; justify-content:flex-start; padding-top:20px; }
+
+/* Step 3 result presentation: keep the recommendation/margin-scale block
+   untouched while giving the surrounding result a clear summary hierarchy. */
+.tochka-result-redesign .widget__content { display:flex; flex-direction:column; gap:20px; padding:24px; }
+.tochka-result-redesign .result-subblocks { display:contents; }
+.tochka-result-redesign .result-subblock--cost,
+.tochka-result-redesign .result-subblock--tight { width:100%; }
+.tochka-result-status { display:flex; align-items:center; gap:16px; padding:20px 24px; border-radius:20px; background:transparent; border:1px solid #d4d4d4; color:#197b4d; }
+.tochka-result-status.is-loss { background:transparent; color:#c94b45; }
+.tochka-result-status__icon { display:flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; background:#198754; color:#fff; font-size:16px; font-weight:600; flex:none; }
+.tochka-result-status.is-loss .tochka-result-status__icon { background:#d95750; }
+.tochka-result-status__icon svg { width:16px; height:16px; fill:currentColor; }
+.tochka-result-status strong { display:block; font-size:18px; line-height:1.2; color:#191919; }
+.tochka-result-status p { margin:4px 0 0; font-size:14px; line-height:1.35; color:#676767; }
+.tochka-result-hero { padding:28px 24px 30px; border:1px solid var(--border-transparent-2, rgba(25,25,25,.16)); border-radius:24px; text-align:center; }
+.tochka-result-hero__eyebrow { margin:0 0 8px; color:var(--text-secondary, #777); font-size:16px; letter-spacing:.03em; }
+.tochka-result-hero strong { display:block; color:#198754; font-size:48px; line-height:1.08; font-weight:600; }
+.tochka-result-hero.is-loss strong { color:#d95750; }
+.tochka-result-hero p:last-child { margin:8px 0 0; color:var(--text-secondary, #777); font-size:20px; }
+.tochka-result-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.tochka-result-metrics > div { display:flex; flex-direction:column; gap:8px; padding:22px 24px; border-radius:20px; background:var(--container-transparent-1, rgba(25,25,25,.05)); }
+.tochka-result-metrics span { color:var(--text-secondary, #777); font-size:14px; letter-spacing:.02em; }
+.tochka-result-metrics strong { color:#191919; font-size:20px; line-height:1.1; font-weight:600; }
+.tochka-result-metrics strong.is-profitable { color:#198754; }
+.tochka-result-metrics strong.is-loss { color:#d95750; }
+.tochka-result-redesign .result-subblock--cost { padding-top:4px; }
+.tochka-result-redesign .result-subblock--cost > .result-subblock__header,
+.tochka-result-redesign .result-subblock--cost > .metric-row-cost,
+.tochka-result-redesign .result-subblock--cost > .cost-vat-row,
+.tochka-result-redesign .result-subblock--tight:not(.result-subblock--cost) > .result-subblock__header,
+.tochka-result-redesign .result-subblock--tight:not(.result-subblock--cost) > .contextual-notification,
+.tochka-result-redesign .result-subblock--tight:not(.result-subblock--cost) > .ds-cell,
+.tochka-result-redesign .result-subblock--tight:not(.result-subblock--cost) > .metric-grid { display:none; }
+.tochka-result-redesign .cost-breakdown { margin-top:0; padding:20px; border:1px solid var(--border-transparent-2, rgba(25,25,25,.16)); border-radius:24px; background:var(--bg-primary, #fff); }
+.tochka-expenses-title { margin:0 0 16px; color:#000; font-size:18px; line-height:1.2; }
+.tochka-expenses-title { display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+.tochka-expenses-chevron { display:inline-flex; width:24px; height:24px; color:currentColor; transition:transform .16s ease; }
+.tochka-expenses-chevron svg { width:24px; height:24px; }
+.tochka-expenses-collapsed .tochka-expenses-chevron { transform:rotate(-90deg); }
+.tochka-expenses-collapsed { height:64px; justify-content:flex-start; align-items:stretch; overflow:hidden; }
+.tochka-expenses-collapsed .accordeon-cell__body { display:none; }
+.tochka-result-redesign .breakdown-source-notice { display:block; padding-top:8px; padding-bottom:8px; }
+.tochka-result-redesign .cost-breakdown .accordeon-cell__header { display:none; }
+.tochka-result-redesign .cost-breakdown .accordeon-cell__body { padding-top:0; }
+.tochka-result-redesign .cost-chart { display:grid; grid-template-columns:minmax(240px, .9fr) minmax(0, 1.7fr); gap:40px; align-items:center; }
+.tochka-result-redesign .cost-chart__figure { width:min(100%, 320px); margin:0 auto; }
+.tochka-result-redesign .cost-chart__legend { gap:0; }
+.tochka-result-redesign .cost-chart__legend-item { height:44px; min-height:44px; padding:0; border-bottom:0; transition:opacity .15s ease; }
+.tochka-result-redesign .cost-chart__legend-item:hover { background:transparent; opacity:.5; }
+.tochka-result-redesign .cost-chart__legend-item:nth-child(n+7) { display:none; }
+.tochka-result-redesign .cost-chart__legend-label { font-size:18px; }
+.tochka-result-redesign .cost-chart__legend-value { font-size:18px; font-weight:600; }
+/* The original merged result stack adds a purple separator before the
+   recommendation controls; the redesigned flow uses spacing instead. */
+.tochka-result-redesign .result-subblock--tight:nth-child(3) { border-top:0 !important; box-shadow:none !important; }
+.tochka-result-redesign .result-divider { display:none !important; }
+@media (max-width:720px) {
+  .tochka-result-redesign .cost-chart { grid-template-columns:1fr; gap:24px; }
+  .tochka-result-redesign .cost-chart__figure { width:min(100%, 280px); }
+}
+@media (max-width: 720px) {
+  .tochka-result-redesign .widget__content { padding:16px; gap:16px; }
+  .tochka-result-status { padding:16px; }
+  .tochka-result-status strong { font-size:20px; }
+  .tochka-result-status p { font-size:14px; }
+  .tochka-result-hero strong { font-size:42px; }
+  .tochka-result-metrics { grid-template-columns:1fr; }
+}
+.inline-cost-editor__actions button { border:0; border-radius:12px; padding:12px 20px; font-size:15px; cursor:pointer; }
+.inline-cost-editor__actions button:last-child { background:var(--primitive-brand); color:#fff; }
+@media (max-width:700px){ .inline-cost-editor__fields{grid-template-columns:1fr;} }
+#flow-step-item-1.is-inline-editing .flow-panel > button.button--primary { display:none; }
+
+/* Real summary chips (not pseudo-content): typography can be edited safely. */
+#flow-step-item-1 .inline-summary-tags { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+#flow-step-item-1 .inline-summary-tag { display:inline-flex; align-items:center; min-height:40px; padding:0 12px; border-radius:12px; background:var(--container-transparent-1); color:var(--primitive-primary); font-size:14px; line-height:20px; white-space:nowrap; }
+#flow-step-item-1 .costs-overview__hint { display:none !important; }
+#flow-step-item-1 .inline-summary-copy { display:flex; flex-direction:column; gap:0; margin:0; padding-top:0 !important; font-size:14px !important; line-height:20px !important; }
+#flow-step-item-1 .inline-summary-copy span { color:var(--primitive-secondary); font-size:14px; line-height:20px; font-weight:300 !important; }
+#flow-step-item-1 .inline-summary-copy strong { color:var(--primitive-primary); font-size:18px; line-height:24px; font-weight:500; }
+#flow-step-item-1 .costs-overview__summary::before { content:"Выбраны типовые значения" !important; }
+#flow-step-item-1 .costs-overview__summary::after { content:"Без НДС, 1 машина (5 т.)" !important; }
+#flow-step-item-1 .costs-overview__summary.inline-summary-copy::before,
+#flow-step-item-1 .costs-overview__summary.inline-summary-copy::after { content:none !important; }
+#flow-step-item-1 .costs-overview::after { content:none !important; }
+
+/* Once step 1 is completed it is a read-only summary. Clicking the card
+   returns the user to the active step, where presets and the edit action are
+   available again. */
+#flow-step-item-1.flow-step--done.flow-step--collapsed .costs-overview__edit {
+  display:none !important;
+}
+
+/* Use the supplied Tochka Icon Button component for the active-step action. */
+#flow-step-item-1 .costs-overview__edit.icon-button {
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:40px;
+  min-width:40px;
+  height:40px;
+  padding:0;
+  border-radius:12px;
+  background:var(--container-transparent-1);
+}
+#flow-step-item-1 .costs-overview__edit.icon-button::before { content:none !important; display:none !important; }
+#flow-step-item-1 .costs-overview__edit.icon-button svg { width:24px; height:24px; fill:none !important; stroke:var(--primitive-primary); }
+#flow-step-item-1 .costs-overview__edit.icon-button svg,
+#flow-step-item-1 .costs-overview__edit.icon-button svg path { fill:currentColor !important; stroke:none !important; }
+
+#flow-step-item-1 .costs-overview { row-gap:0 !important; }
+
+.inline-cost-editor__chevron { display:inline-flex; width:24px; height:24px; color:var(--primitive-primary); transition:transform .16s ease; }
+.inline-cost-editor__chevron svg, .inline-cost-editor__chevron path { width:24px; height:24px; fill:none !important; stroke-width:2px; }
+.inline-cost-editor__section.is-open .inline-cost-editor__chevron { transform:rotate(180deg); }
+
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6)::before { content:none !important; display:none !important; }
+#flow-step-item-1 .choice-card__gear { display:block; width:32px; height:32px; color:var(--primitive-neutral-7); }
+#flow-step-item-1 .choice-card__gear svg { display:block; width:32px; height:32px; fill:currentColor !important; }
+#flow-step-item-1 .choice-card__gear svg * { fill:currentColor !important; stroke:none !important; }
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6)[aria-checked="true"] .choice-card__gear,
+#flow-step-item-1 .choice-grid--capacity .choice-card:nth-child(6).is-selected .choice-card__gear { color:var(--primitive-brand); }
+
+/* Keep the existing editor state and Save/Cancel behaviour, but present it as
+   an inline settings surface instead of a disruptive dimmed modal. The dialog
+   remains React-owned and accessible; only its visual placement changes. */
+.modal.cost-settings-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 50 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 112px 16px 24px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.cost-settings-modal::before,
+.cost-settings-modal::after {
+  display: none !important;
+  content: none !important;
+}
+
+.cost-settings-modal > .modal__overlay {
+  display: none !important;
+}
+
+.cost-settings-modal .modal__panel {
+  width: min(870px, 100%) !important;
+  max-width: none !important;
+  max-height: calc(100vh - 136px) !important;
+  overflow: auto !important;
+  margin: 0 !important;
+  border: 1px solid var(--primitive-neutral-3, #e5e5e5) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 12px 32px rgba(25, 25, 25, 0.12) !important;
+  background: #fff !important;
+}
+
+.cost-settings-modal .modal__header {
+  padding: 24px 28px 12px !important;
+}
+
+/* The editor is presented as the expanded state of the summary card. Keep
+   the actual form controls and Save/Cancel actions, but remove modal-only
+   chrome and copy so the surface reads as one continuous block. */
+.cost-settings-modal .modal__header > *:not(button) {
+  font-size: 0 !important;
+}
+
+.cost-settings-modal .modal__header > *:not(button)::after {
+  content: "Без НДС, 1 машина (5 т.)";
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.cost-settings-modal .modal__content > .modal-info,
+.cost-settings-modal .modal__content > .alert,
+.cost-settings-modal .modal__content [class*="notice"] {
+  display: none !important;
+}
+
+.cost-settings-modal .modal__content {
+  padding: 0 28px 24px !important;
+}
+
+.cost-settings-modal .modal__footer {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 28px 24px !important;
+  background: #fff;
+  border-top: 1px solid var(--primitive-neutral-3, #e5e5e5);
+}
+
+@media (max-width: 700px) {
+  .cost-settings-modal {
+    padding: 72px 8px 8px !important;
+  }
+
+  .cost-settings-modal .modal__header,
+  .cost-settings-modal .modal__content,
+  .cost-settings-modal .modal__footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}

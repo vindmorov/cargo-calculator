@@ -1,0 +1,258 @@
+/* ─── Base ──────────────────────────────────────────────────────────────── */
+
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  min-height: calc(100vh - var(--page-layout-top-offset, 0px));
+}
+
+.page-layout__nav {
+  flex-shrink: 0;
+  width: var(--page-layout-nav-width, 280px);
+}
+
+.page-layout__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.page-layout__content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: var(--page-top-padding);
+  padding-bottom: var(--page-bottom-padding-with-chat);
+}
+
+.page-layout__right-panel {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding-left: var(--page-horizontal-padding);
+  padding-right: var(--page-horizontal-padding);
+}
+
+/* ─── Mobile ≤1023px ─────────────────────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .page-layout__nav {
+    width: 100%;
+    position: sticky;
+    top: var(--page-layout-top-offset, 0px);
+    height: auto;
+    z-index: 100;
+    background: var(--page-layout-nav-background, var(--page-primary));
+  }
+
+  .page-layout__content-wrapper {
+    flex: 1;
+  }
+
+  .page-layout__content {
+    max-width: none;
+    margin: 0;
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+    padding-bottom: var(--page-bottom-padding);
+  }
+
+  .page-layout__right-panel {
+    width: 100%;
+  }
+}
+
+/* ─── Desktop nav: sticky in flow (default for 1024px+) ─────────────────── */
+
+@media (min-width: 1024px) {
+  .page-layout__nav {
+    position: sticky;
+    top: var(--page-layout-top-offset, 0px);
+    height: calc(100vh - var(--page-layout-top-offset, 0px));
+    overflow-y: auto;
+  }
+}
+
+/* ─── Size L ─────────────────────────────────────────────────────────────── */
+
+/* 1024–1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .page-layout--l .page-layout__content-wrapper {
+    flex: 1;
+    padding-right: var(--spacing-10x);
+  }
+
+  .page-layout--l .page-layout__content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* 1440–1719px */
+@media (min-width: 1440px) and (max-width: 1719px) {
+  .page-layout--l .page-layout__content-wrapper {
+    flex: 1;
+  }
+
+  .page-layout--l .page-layout__content {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+/* 1720px+ */
+@media (min-width: 1720px) {
+  .page-layout--l .page-layout__nav {
+    position: fixed;
+    left: 0;
+    top: var(--page-layout-top-offset, 0px);
+    height: calc(100vh - var(--page-layout-top-offset, 0px));
+  }
+
+  .page-layout--l .page-layout__content-wrapper {
+    width: 100%;
+  }
+
+  .page-layout--l .page-layout__content {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+/* ─── Size S / M shared ──────────────────────────────────────────────────── */
+
+/* 1024–1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .page-layout--s .page-layout__content-wrapper,
+  .page-layout--m .page-layout__content-wrapper {
+    flex: 1;
+  }
+
+  .page-layout--s .page-layout__content,
+  .page-layout--m .page-layout__content {
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+  }
+}
+
+/* 1280px+ */
+@media (min-width: 1280px) {
+  .page-layout--s .page-layout__nav,
+  .page-layout--m .page-layout__nav {
+    position: fixed;
+    left: 0;
+    top: var(--page-layout-top-offset, 0px);
+    height: calc(100vh - var(--page-layout-top-offset, 0px));
+  }
+
+  .page-layout--s .page-layout__content-wrapper,
+  .page-layout--m .page-layout__content-wrapper {
+    width: 100%;
+  }
+
+  .page-layout--s .page-layout__content,
+  .page-layout--m .page-layout__content {
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+  }
+}
+
+/* ─── Size S max-width ───────────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .page-layout--s:not(.page-layout--has-right-panel) .page-layout__content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* ─── Size M max-width ───────────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .page-layout--m .page-layout__content {
+    max-width: 870px;
+    margin: 0 auto;
+  }
+}
+
+/* ─── Size S + right panel ───────────────────────────────────────────────── */
+
+/* 1024–1279px: sticky nav, 320px panel, no max-width on content */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .page-layout--s.page-layout--has-right-panel .page-layout__content-wrapper {
+    flex: 1;
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__right-panel {
+    width: 320px;
+  }
+}
+
+/* 1280–1439px: sticky nav (overrides fixed from S 1280px+), 360px panel */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .page-layout--s.page-layout--has-right-panel .page-layout__nav {
+    position: sticky;
+    left: auto;
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__content-wrapper {
+    flex: 1;
+    width: auto;
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__right-panel {
+    width: 360px;
+  }
+}
+
+/* 1440px+: fixed nav, fixed right panel, content max-width centered */
+@media (min-width: 1440px) {
+  .page-layout--s.page-layout--has-right-panel .page-layout__nav {
+    position: fixed;
+    left: 0;
+    top: var(--page-layout-top-offset, 0px);
+    height: calc(100vh - var(--page-layout-top-offset, 0px));
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__content-wrapper {
+    width: 100%;
+    flex: none;
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: var(--page-horizontal-padding);
+    padding-right: var(--page-horizontal-padding);
+  }
+
+  .page-layout--s.page-layout--has-right-panel .page-layout__right-panel {
+    position: fixed;
+    right: 0;
+    top: var(--page-layout-top-offset, 0px);
+    width: 360px;
+    height: calc(100vh - var(--page-layout-top-offset, 0px));
+    overflow-y: auto;
+  }
+}

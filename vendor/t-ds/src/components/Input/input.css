@@ -1,0 +1,183 @@
+.input {
+  --input-padding-x: var(--spacing-5x);
+  --input-padding-y: var(--spacing-3x);
+  --input-gap-title: var(--spacing-3x);
+  --input-gap-bottom: var(--spacing-2x);
+  --input-gap-right: var(--spacing-4x);
+  --input-surface: var(--container-transparent-1);
+  --input-border-color: transparent;
+  --input-border-width: 0;
+  --input-focus-ring: inset 0 0 0 0 transparent;
+  --input-title-color: var(--primitive-primary);
+  --input-help-color: var(--primitive-secondary);
+  --input-text-color: var(--primitive-primary);
+  --input-placeholder-color: var(--primitive-neutral-4);
+  --input-description-color: var(--primitive-secondary);
+  --input-divider-color: var(--translucent-primitives-neutral-2);
+  --input-divider-height: 1px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--input-padding-x);
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--rounding-3x);
+  background: var(--input-surface);
+  box-shadow: var(--input-focus-ring);
+}
+
+.input--hovered {
+  --input-surface: var(--state-container-transparent-1-active);
+}
+
+.input:hover {
+  --input-surface: var(--state-container-transparent-1-active);
+}
+
+.input--white {
+  --input-surface: var(--bg-default);
+}
+
+.input--white:hover:not(:focus-within) {
+  --input-surface: var(--bg-default);
+  box-shadow: inset 0 0 0 1px var(--primitive-brand);
+}
+
+.input--focused {
+  --input-surface: var(--container-transparent-1);
+  --input-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.input:focus-within {
+  --input-surface: var(--container-transparent-1);
+  --input-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.input--white:focus-within {
+  --input-surface: var(--bg-default);
+}
+
+.input--error {
+  --input-description-color: var(--primitive-error);
+  --input-divider-color: var(--primitive-error);
+  --input-divider-height: 2px;
+}
+
+.input--disabled .input__title,
+.input--disabled .input__field {
+  opacity: 0.5;
+}
+
+.input--disabled,
+.input--disabled .input__field,
+.input--disabled .input__help,
+.input--disabled .input__accessory {
+  cursor: not-allowed;
+}
+
+.input--disabled:hover {
+  --input-surface: var(--container-transparent-1);
+}
+
+.input__content {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.input__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--input-padding-y) 0;
+  gap: var(--input-gap-bottom);
+}
+
+.input__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  min-height: 18px;
+  min-width: 0;
+}
+
+.input__title {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--input-title-color);
+  white-space: nowrap;
+}
+
+.input__help.ds-icon {
+  --icon-size: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 18px;
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--input-help-color);
+  cursor: pointer;
+}
+
+.input__help.ds-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.input__field {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--input-text-color);
+}
+
+.input__field::placeholder {
+  color: var(--input-placeholder-color);
+  opacity: 1;
+}
+
+.input__accessory {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 0 0 auto;
+  padding-left: var(--input-gap-right);
+  color: var(--primitive-brand);
+}
+
+.input__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  width: 100%;
+  padding-bottom: var(--spacing-3x);
+}
+
+.input__divider {
+  width: 100%;
+  height: 2px;
+}
+
+.input__divider::before {
+  display: block;
+  width: 100%;
+  height: var(--input-divider-height);
+  margin-top: calc(2px - var(--input-divider-height));
+  background: var(--input-divider-color);
+  content: "";
+}
+
+.input__description {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--input-description-color);
+}

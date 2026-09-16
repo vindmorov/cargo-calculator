@@ -1,0 +1,122 @@
+.promo-page-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-10x) var(--spacing-10x) 0;
+  border-radius: var(--rounding-4x);
+  background: var(--bg-neutral-1);
+  overflow: hidden;
+}
+
+.promo-page-card--without-image {
+  padding-bottom: var(--spacing-10x);
+}
+
+.promo-page-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-5x);
+  width: 100%;
+  padding-bottom: var(--spacing-5x);
+  box-sizing: border-box;
+}
+
+.promo-page-card--without-image .promo-page-card__content {
+  padding-bottom: 0;
+}
+
+.promo-page-card__avatar {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.promo-page-card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4x);
+  width: 100%;
+  min-width: 0;
+}
+
+.promo-page-card__title,
+.promo-page-card__description {
+  width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.promo-page-card__title {
+  color: var(--primitive-primary);
+}
+
+.promo-page-card__description {
+  color: var(--primitive-secondary);
+}
+
+.promo-page-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.promo-page-card__image-img,
+.promo-page-card__default-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-page-card__image-img {
+  object-fit: cover;
+}
+
+.promo-page-card__default-image {
+  background:
+    linear-gradient(45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--primitive-primary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--primitive-primary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--primitive-primary) 75%),
+    var(--primitive-default);
+  background-position: 0 0, 0 50px, 50px -50px, -50px 0;
+  background-size: 100px 100px;
+}
+
+.promo-page-card--horizontal {
+  padding: var(--spacing-10x);
+}
+
+.promo-page-card--horizontal .promo-page-card__content {
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 0;
+}
+
+.promo-page-card--horizontal .promo-page-card__text {
+  flex: 1 1 auto;
+  gap: var(--spacing-2x);
+}
+
+@media screen and (max-width: 600px) {
+  .promo-page-card {
+    width: 100%;
+    padding: var(--spacing-8x) var(--spacing-8x) 0;
+  }
+
+  .promo-page-card--without-image,
+  .promo-page-card--horizontal {
+    padding: var(--spacing-8x);
+  }
+
+  .promo-page-card__text {
+    gap: var(--spacing-3x);
+  }
+
+  .promo-page-card--horizontal .promo-page-card__text {
+    gap: var(--spacing-2x);
+  }
+}

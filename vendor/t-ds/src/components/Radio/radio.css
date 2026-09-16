@@ -1,0 +1,85 @@
+.radio {
+  --radio-size: 24px;
+  --radio-border-width: 2px;
+  --radio-indicator-size: 12px;
+  --radio-surface: transparent;
+  --radio-border-color: var(--primitive-neutral-3);
+  --radio-indicator-color: transparent;
+  --radio-surface-hovered: transparent;
+  --radio-border-color-hovered: var(--primitive-brand);
+  --radio-indicator-color-hovered: var(--state-bg-brand-active);
+  --radio-surface-disabled: var(--bg-neutral-3);
+  --radio-border-color-disabled: var(--bg-neutral-3);
+  --radio-indicator-color-disabled: var(--primitive-neutral-4);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--radio-size);
+  min-width: var(--radio-size);
+  height: var(--radio-size);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  vertical-align: top;
+  appearance: none;
+}
+
+.radio:not(:disabled) {
+  cursor: pointer;
+}
+
+.radio::before,
+.radio::after {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+}
+
+.radio::before {
+  inset: 0;
+  border: var(--radio-border-width) solid var(--radio-border-color);
+  background: var(--radio-surface);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.radio::after {
+  width: var(--radio-indicator-size);
+  height: var(--radio-indicator-size);
+  background: var(--radio-indicator-color);
+  transition:
+    background-color 0.15s ease;
+}
+
+.radio:hover:not(:disabled) {
+  --radio-surface: var(--radio-surface-hovered);
+  --radio-border-color: var(--radio-border-color-hovered);
+}
+
+.radio.is-selected {
+  --radio-surface: var(--primitive-brand);
+  --radio-border-color: var(--primitive-brand);
+  --radio-indicator-color: var(--primitive-default);
+}
+
+.radio.is-selected:hover:not(:disabled) {
+  --radio-surface: var(--state-bg-brand-active);
+  --radio-border-color: var(--state-bg-brand-active);
+  --radio-indicator-color: var(--primitive-default);
+}
+
+.radio:disabled,
+.radio.is-disabled {
+  --radio-surface: var(--radio-surface-disabled);
+  --radio-border-color: var(--radio-border-color-disabled);
+  cursor: not-allowed;
+}
+
+.radio:disabled.is-selected,
+.radio.is-disabled.is-selected {
+  --radio-indicator-color: var(--radio-indicator-color-disabled);
+}

@@ -1,0 +1,107 @@
+.ds-cell-right-accessory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  flex: 0 0 auto;
+}
+
+.ds-cell-right-accessory__row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2x);
+}
+
+.ds-cell-right-accessory__stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0;
+}
+
+.ds-cell-right-accessory__disclosure {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  color: var(--primitive-secondary);
+}
+
+.ds-cell-right-accessory__disclosure svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-cell-right-accessory__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primitive-primary);
+  flex: 0 0 auto;
+}
+
+.ds-cell-right-accessory__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-cell-right-accessory__icon--30 {
+  width: 30px;
+  height: 30px;
+}
+
+.ds-cell-right-accessory__icon--24 {
+  width: 24px;
+  height: 24px;
+}
+
+.ds-cell-right-accessory__icon--18 {
+  width: 18px;
+  height: 18px;
+}
+
+.ds-cell-right-accessory__spinner-large {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+}
+
+.ds-cell-right-accessory__spinner-large-inner.ds-spinner {
+  width: 34px;
+  height: 34px;
+  color: var(--primitive-brand);
+}
+
+.ds-cell-right-accessory__text-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary);
+}
+
+.ds-cell-right-accessory__text-m,
+.ds-cell-right-accessory__text-m-primary,
+.ds-cell-right-accessory__text-m-strong {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary);
+}
+
+.ds-cell-right-accessory__text-s,
+.ds-cell-right-accessory__text-s-muted {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary);
+}
+
+.ds-cell-right-accessory__text-xs-secondary {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-secondary);
+}
+
+.ds-cell-right-accessory__text-s-muted {
+  color: var(--primitive-secondary);
+}
+
+.ds-cell-right-accessory__notification-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-brand);
+}

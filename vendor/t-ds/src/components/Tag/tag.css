@@ -1,0 +1,112 @@
+.tag {
+  --tag-text-color: var(--primitive-default);
+  --tag-surface-color: var(--bg-brand);
+  --tag-border-color: var(--tag-surface-color);
+  --tag-border-width: 0;
+  --tag-radius: var(--rounding-pill);
+  --tag-padding-x: var(--spacing-3x);
+  --tag-padding-y: var(--spacing-1-5x);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  border: var(--tag-border-width) solid var(--tag-border-color);
+  border-radius: var(--tag-radius);
+  background: var(--tag-surface-color);
+  color: var(--tag-text-color);
+  vertical-align: top;
+}
+
+.tag--outlined {
+  --tag-text-color: var(--primitive-brand);
+  --tag-surface-color: transparent;
+  --tag-border-color: var(--primitive-brand);
+  --tag-border-width: 1px;
+}
+
+.tag--circle {
+  --tag-radius: var(--rounding-pill);
+}
+
+.tag--xl {
+  --tag-padding-y: var(--spacing-1-5x);
+}
+
+.tag--l {
+  --tag-padding-y: calc(var(--spacing-1-5x) / 2);
+}
+
+.tag--m {
+  --tag-padding-y: var(--spacing-0-5x);
+}
+
+.tag--s {
+  --tag-padding-y: calc(var(--spacing-0-5x) / 2);
+}
+
+.tag--circle.tag--xl {
+  --tag-padding-x: var(--spacing-3x);
+}
+
+.tag--square.tag--xl {
+  --tag-padding-x: var(--spacing-2-5x);
+  --tag-radius: var(--rounding-2x);
+}
+
+.tag--circle.tag--l {
+  --tag-padding-x: var(--spacing-2-5x);
+}
+
+.tag--square.tag--l {
+  --tag-padding-x: var(--spacing-2x);
+  --tag-radius: var(--rounding-1-5x);
+}
+
+.tag--circle.tag--m {
+  --tag-padding-x: var(--spacing-2x);
+}
+
+.tag--square.tag--m {
+  --tag-padding-x: var(--spacing-1-5x);
+  --tag-radius: var(--rounding-1x);
+}
+
+.tag--circle.tag--s {
+  --tag-padding-x: var(--spacing-1-5x);
+}
+
+.tag--square.tag--s {
+  --tag-padding-x: var(--spacing-1x);
+  --tag-radius: var(--rounding-1x);
+}
+
+.tag__label {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.tag-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6x);
+  width: fit-content;
+}
+
+.tag-grid {
+  display: grid;
+  grid-template-columns: 120px repeat(4, max-content);
+  gap: var(--spacing-3x) var(--spacing-5x);
+  align-items: center;
+}
+
+.tag-grid__heading,
+.tag-grid__label {
+  color: var(--primitive-primary);
+  white-space: nowrap;
+}
+
+.tag-grid__heading {
+  margin: 0;
+}

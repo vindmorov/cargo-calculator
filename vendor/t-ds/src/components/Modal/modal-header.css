@@ -1,0 +1,96 @@
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--popup-primary);
+}
+
+.modal-header__navigation {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 120px;
+  align-items: start;
+  min-height: var(--spacing-16x);
+  padding: var(--spacing-1-5x) var(--page-horizontal-padding) 0;
+}
+
+.modal-header__center {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-header__title {
+  color: var(--primitive-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal-header__title--default {}
+
+.modal-header__title--compact {
+  width: 100%;
+  padding-top: var(--spacing-4x);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.modal__header--compact .modal-header__title--compact {
+  opacity: 1;
+}
+
+.modal-header__side {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 120px;
+  min-height: 52px;
+  color: var(--primitive-primary);
+}
+
+.modal-header__navigation > .modal-header__side:last-child {
+  justify-content: flex-end;
+}
+
+.modal-header__side--empty {
+  visibility: hidden;
+}
+
+.modal-header__control {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+}
+
+/* Empty variant — пустой спейсер вместо шапки */
+.modal-header--empty {
+  height: var(--spacing-7-5x);
+  border-radius: var(--rounding-4-5x) var(--rounding-4-5x) 0 0;
+  background: var(--popup-primary);
+}
+
+@media (max-width: 600px) {
+  .modal-header--empty {
+    height: var(--spacing-16x);
+    border-radius: 0;
+    background: var(--page-primary);
+  }
+
+  /* Fullscreen mobile: compact-заголовок всегда виден сразу, без скролла и анимации */
+  .modal__header .modal-header__title--compact {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.modal-header__control:focus-visible {
+  outline: 2px solid var(--primitive-brand);
+  outline-offset: 2px;
+  border-radius: var(--rounding-2x);
+}
+
+.modal-header__icon {
+  color: inherit;
+}

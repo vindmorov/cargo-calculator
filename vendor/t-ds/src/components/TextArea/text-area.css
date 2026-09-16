@@ -1,0 +1,181 @@
+.text-area {
+  --text-area-padding-x: var(--spacing-5x);
+  --text-area-padding-y: var(--spacing-3x);
+  --text-area-gap-title: var(--spacing-3x);
+  --text-area-gap-bottom: var(--spacing-2x);
+  --text-area-gap-right: var(--spacing-4x);
+  --text-area-surface: var(--container-transparent-1);
+  --text-area-border-color: transparent;
+  --text-area-border-width: 0;
+  --text-area-focus-ring: inset 0 0 0 0 transparent;
+  --text-area-title-color: var(--primitive-primary);
+  --text-area-help-color: var(--primitive-secondary);
+  --text-area-counter-color: var(--primitive-secondary);
+  --text-area-text-color: var(--primitive-primary);
+  --text-area-placeholder-color: var(--primitive-neutral-4);
+  --text-area-description-color: var(--primitive-secondary);
+  --text-area-divider-color: var(--translucent-primitives-neutral-2);
+  --text-area-divider-height: 1px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--text-area-padding-x);
+  border: var(--text-area-border-width) solid var(--text-area-border-color);
+  border-radius: var(--rounding-3x);
+  background: var(--text-area-surface);
+  box-shadow: var(--text-area-focus-ring);
+}
+
+.text-area--hovered {
+  --text-area-surface: var(--state-container-transparent-1-active);
+}
+
+.text-area:hover {
+  --text-area-surface: var(--state-container-transparent-1-active);
+}
+
+.text-area--focused {
+  --text-area-surface: var(--container-transparent-1);
+  --text-area-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.text-area:focus-within {
+  --text-area-surface: var(--container-transparent-1);
+  --text-area-focus-ring: inset 0 0 0 2px var(--primitive-brand);
+}
+
+.text-area--error {
+  --text-area-description-color: var(--primitive-error);
+  --text-area-divider-color: var(--primitive-error);
+  --text-area-divider-height: 2px;
+}
+
+.text-area--disabled .text-area__title,
+.text-area--disabled .text-area__field {
+  opacity: 0.5;
+}
+
+.text-area--disabled,
+.text-area--disabled .text-area__field,
+.text-area--disabled .text-area__help {
+  cursor: not-allowed;
+}
+
+.text-area--disabled:hover {
+  --text-area-surface: var(--container-transparent-1);
+}
+
+.text-area__content {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.text-area__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--text-area-padding-y) 0;
+  gap: var(--text-area-gap-bottom);
+}
+
+.text-area__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  min-height: 18px;
+  width: 100%;
+}
+
+.text-area__header-main {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.text-area__title {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--text-area-title-color);
+  white-space: nowrap;
+}
+
+.text-area__help.ds-icon {
+  --icon-size: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 18px;
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-area-help-color);
+  cursor: pointer;
+}
+
+.text-area__help.ds-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.text-area__counter {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--text-area-counter-color);
+  white-space: nowrap;
+}
+
+.text-area__field {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 20px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--text-area-text-color);
+  field-sizing: content;
+}
+
+.text-area__field::placeholder {
+  color: var(--text-area-placeholder-color);
+  opacity: 1;
+}
+
+.text-area__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2x);
+  width: 100%;
+  padding-bottom: var(--spacing-3x);
+}
+
+.text-area__divider {
+  width: 100%;
+  height: 2px;
+}
+
+.text-area__divider::before {
+  display: block;
+  width: 100%;
+  height: var(--text-area-divider-height);
+  margin-top: calc(2px - var(--text-area-divider-height));
+  background: var(--text-area-divider-color);
+  content: "";
+}
+
+.text-area__description {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--text-area-description-color);
+}

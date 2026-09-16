@@ -1,0 +1,96 @@
+.icon-button {
+  --icon-button-size: 48px;
+  --icon-button-radius: var(--button-rounding-strong);
+  --icon-button-spinner-size: 20px;
+  --button-bg: transparent;
+  --button-color: var(--primitive-primary);
+  --button-bg-hovered: var(--button-bg);
+  --button-bg-disabled: var(--button-bg);
+  --button-spinner-color: var(--button-color);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-button-size);
+  height: var(--icon-button-size);
+  border: 0;
+  border-radius: var(--icon-button-radius);
+  background: var(--button-bg);
+  color: var(--button-color);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  appearance: none;
+}
+
+.icon-button--xl { --icon-button-size: 64px; --icon-button-spinner-size: 24px; }
+.icon-button--l  { --icon-button-size: 56px; --icon-button-spinner-size: 24px; }
+.icon-button--s  { --icon-button-size: 40px; --icon-button-radius: var(--button-rounding-weak); --icon-button-spinner-size: 16px; }
+.icon-button--xs { --icon-button-size: 32px; --icon-button-radius: var(--button-rounding-weak); --icon-button-spinner-size: 16px; }
+
+.icon-button:hover:not(:disabled):not(.is-loading) {
+  background: var(--button-bg-hovered);
+}
+
+.icon-button:disabled {
+  --button-color: var(--primitive-primary);
+  --button-bg: var(--container-transparent-1);
+  cursor: not-allowed;
+}
+
+.icon-button:disabled .icon-button__icon {
+  opacity: 0.25;
+}
+
+.icon-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button.is-loading .icon-button__icon {
+  visibility: hidden;
+}
+
+.icon-button .ds-spinner {
+  --spinner-size: var(--icon-button-spinner-size);
+  --spinner-color: var(--button-spinner-color);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  translate: -50% -50%;
+}
+
+.icon-button.is-loading .ds-spinner {
+  display: inline-flex;
+}
+
+.icon-button--primary {
+  --button-bg: var(--bg-brand);
+  --button-color: var(--primitive-default);
+  --button-bg-hovered: var(--state-bg-brand-active);
+  --button-spinner-color: var(--primitive-default);
+}
+
+.icon-button--secondary {
+  --button-bg: var(--container-transparent-1);
+  --button-color: var(--primitive-primary);
+  --button-bg-hovered: var(--state-container-transparent-1-active);
+  --button-spinner-color: var(--primitive-brand);
+}
+
+.icon-button--transparent {
+  --button-bg: transparent;
+  --button-color: var(--primitive-brand);
+  --button-bg-hovered: var(--container-transparent-1);
+  --button-spinner-color: var(--primitive-brand);
+}
+
+.icon-button--white {
+  --button-bg: var(--bg-default);
+  --button-color: var(--primitive-brand);
+  --button-bg-hovered: color-mix(in srgb, var(--bg-default) 50%, transparent);
+  --button-spinner-color: var(--primitive-brand);
+}

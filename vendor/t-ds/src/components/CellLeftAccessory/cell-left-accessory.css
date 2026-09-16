@@ -1,0 +1,97 @@
+.ds-cell-left-accessory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 40px;
+}
+
+.ds-cell-left-accessory__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primitive-primary);
+  flex: 0 0 auto;
+}
+
+.ds-cell-left-accessory__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-cell-left-accessory__icon--30 {
+  width: 30px;
+  height: 30px;
+}
+
+.ds-cell-left-accessory__icon--24 {
+  width: 24px;
+  height: 24px;
+}
+
+.ds-cell-left-accessory__icon--18 {
+  width: 18px;
+  height: 18px;
+}
+
+.ds-cell-left-accessory__card-preview {
+  display: inline-flex;
+  width: 60px;
+  height: 38px;
+  border-radius: var(--rounding-2-5x);
+  background: var(--bg-neutral-2);
+}
+
+
+.ds-cell-left-accessory__add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--translucent-primitives-neutral-2);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--primitive-brand);
+  cursor: pointer;
+}
+
+.ds-cell-left-accessory__add-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+}
+
+.ds-cell-left-accessory__add-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.ds-cell-left-accessory__file {
+  background: var(--bg-neutral-2);
+  width: 40px;
+  height: 40px;
+}
+
+.ds-cell-left-accessory__file-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounding-2-5x);
+  background: var(--container-transparent-1);
+}
+
+.ds-cell-left-accessory__file-icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+
+.ds-cell-left-accessory__file-icon svg {
+  width: 100%;
+  height: 100%;
+}

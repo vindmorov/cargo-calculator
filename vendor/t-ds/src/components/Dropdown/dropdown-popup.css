@@ -1,0 +1,128 @@
+.dropdown-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.dropdown-popup__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: all;
+}
+
+/* ===== Desktop panel ===== */
+
+.dropdown-popup__panel {
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: var(--rounding-3x, 12px);
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  pointer-events: all;
+  animation: dropdown-fade-in 0.15s ease both;
+}
+
+.dropdown-popup--exiting .dropdown-popup__panel {
+  animation: dropdown-fade-out 0.15s ease both;
+}
+
+@keyframes dropdown-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dropdown-fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-4px); }
+}
+
+/* ===== Content — height by content, max 280px ===== */
+
+.dropdown-popup__content {
+  padding: var(--spacing-3x) var(--spacing-5x);
+  max-height: 280px;
+}
+
+/* ===== Selected item checkmark ===== */
+
+.dropdown-popup__checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--primitive-success);
+  flex-shrink: 0;
+}
+
+.dropdown-popup__checkmark svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* ===== Search bar ===== */
+
+.dropdown-popup__search-wrap {
+  flex-shrink: 0;
+  padding: 6px var(--spacing-5x, 20px) 10px;
+}
+
+.dropdown-popup__search {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background: var(--container-transparent-1, rgba(25, 25, 25, 0.05));
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: var(--spacing-4x, 16px);
+}
+
+.dropdown-popup__search-icon {
+  display: flex;
+  align-items: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--primitive-neutral-4, #949494);
+  margin-right: 10px;
+}
+
+.dropdown-popup__search-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-popup__search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-primary, #191919);
+}
+
+.dropdown-popup__search-input::placeholder {
+  color: var(--primitive-neutral-4, #949494);
+}
+
+/* ===== State views ===== */
+
+.dropdown-popup__state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8x, 32px) var(--spacing-5x, 20px);
+}
+
+.dropdown-popup__empty-text {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  color: var(--primitive-secondary, #676767);
+  text-align: center;
+}
+

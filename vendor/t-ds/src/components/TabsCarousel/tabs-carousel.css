@@ -1,0 +1,116 @@
+.tabs-carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ─── Строка табов ─────────────────────────────────────────── */
+
+.tabs-carousel__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4x);
+  overflow: hidden;
+}
+
+.tabs-carousel__tabs {
+  display: flex;
+  flex: 1 0 0;
+  gap: var(--spacing-4x);
+  align-items: flex-start;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Градиентная маска сигнализирует о продолжении списка */
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 15px), transparent 100%);
+  mask-image: linear-gradient(to right, black calc(100% - 15px), transparent 100%);
+}
+
+.tabs-carousel__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Таб ──────────────────────────────────────────────────── */
+
+.tabs-carousel__tab {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: var(--spacing-1-5x);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--translucent-primitives-neutral-3);
+  cursor: pointer;
+  transition: color 0.12s ease;
+}
+
+.tabs-carousel__tab:hover:not(.is-active) {
+  color: var(--translucent-primitives-neutral-4);
+}
+
+.tabs-carousel__tab.is-active {
+  color: var(--primitive-primary);
+  cursor: default;
+}
+
+.tabs-carousel__tab-label {
+  white-space: nowrap;
+}
+
+/* ─── Бейдж ────────────────────────────────────────────────── */
+
+.tabs-carousel__tab-badge {
+  flex-shrink: 0;
+}
+
+/* XL: бейдж по центру высоты текста */
+.tabs-carousel__tab-badge--xl {
+  align-self: center;
+}
+
+/* 2XL: бейдж прижат к верху с отступом, визуально центрируется рядом с текстом */
+.tabs-carousel__tab-badge--2xl {
+  align-self: flex-start;
+  padding-top: 8px;
+}
+
+/* ─── Кнопка действия ──────────────────────────────────────── */
+
+.tabs-carousel__action {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--spacing-2-5x);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--primitive-primary);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.tabs-carousel__action:hover {
+  opacity: 0.5;
+}
+
+.tabs-carousel__action-label {
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* ─── Контентная область ───────────────────────────────────── */
+
+.tabs-carousel__content {
+  /* Начальное состояние: контент видим */
+  opacity: 1;
+}
+
+/* ─── Адаптив ──────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .tabs-carousel__action-label {
+    display: none;
+  }
+}

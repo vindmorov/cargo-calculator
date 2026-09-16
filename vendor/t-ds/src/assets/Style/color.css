@@ -1,0 +1,134 @@
+:root {
+  --primitive-primary: #191919;
+  --primitive-secondary: #676767;
+  --primitive-neutral-4: #949494;
+  --primitive-neutral-3: #c8c8c8;
+  --primitive-neutral-2: #d4d4d4;
+  --primitive-neutral-1: #e1e1e1;
+  --primitive-default: #ffffff;
+  --primitive-brand: #835de1;
+  --primitive-error: #d84d4d;
+  --primitive-success: #3f9180;
+  --primitive-warning: #f0c555;
+  --primitive-warning-2: #9a7811;
+
+  --bg-neutral-4: #aeaeae;
+  --bg-neutral-3: #e1e1e1;
+  --bg-neutral-2: #eeeeee;
+  --bg-neutral-1: #f4f4f4;
+  --bg-default: #ffffff;
+  --bg-brand: #835de1;
+  --bg-brand-5: #b39df7;
+  --bg-brand-4: #cabef3;
+  --bg-brand-3: #d6cef3;
+  --bg-brand-2: #e2ddf6;
+  --bg-brand-1: #efedf8;
+  --bg-error: #d84d4d;
+  --bg-error-5: #f98e88;
+  --bg-error-4: #fbb2ab;
+  --bg-error-3: #ffc3be;
+  --bg-error-2: #fcd7d4;
+  --bg-error-1: #f9ebea;
+  --bg-success: #3f9180;
+  --bg-success-5: #7ac6b2;
+  --bg-success-4: #a5d7ca;
+  --bg-success-3: #b5e3d7;
+  --bg-success-2: #c9eee3;
+  --bg-success-1: #ddf8ef;
+  --bg-warning: #f0c555;
+  --bg-warning-5: #f0c555;
+  --bg-warning-4: #fad370;
+  --bg-warning-3: #fde2a2;
+  --bg-warning-2: #fbefd2;
+  --bg-warning-1: #fcf5e3;
+
+  --container-default: #ffffff;
+  --container-transparent-1: #1919190d;
+  --container-transparent-1-inverse: #FFFFFF1A;
+  --container-transparent-2: #1919191a;
+  --container-transparent-2-inverse: #FFFFFF26;
+
+  --page-primary: #ffffff;
+  --page-secondary: #f9f9f9;
+
+  --popup-primary: #ffffff;
+  --popup-secondary: #f9f9f9;
+
+  --overlay-popup: #19191966;
+  --overlay-primary-alpha-050: #19191980;
+
+  /* Marketing — Day */
+  --marketing-amaranth-1-fixed: #fce8f5;
+  --marketing-amaranth-2-fixed: #f6d1e9;
+  --marketing-amaranth-3-fixed: #e4a7d0;
+  --marketing-amaranth-4-fixed: #d481b9;
+  --marketing-amaranth-5-fixed: #c460a5;
+  --marketing-amaranth-6-fixed: #b44292;
+  --marketing-amaranth-7-fixed: #a32881;
+
+  --marketing-herbal-1-fixed: #e6faf0;
+  --marketing-herbal-2-fixed: #ccf1de;
+  --marketing-herbal-3-fixed: #96ddb9;
+  --marketing-herbal-4-fixed: #66c797;
+  --marketing-herbal-5-fixed: #3db279;
+  --marketing-herbal-6-fixed: #1b9d5f;
+  --marketing-herbal-7-fixed: #008749;
+
+  --marketing-orange-1-fixed: #fcefeb;
+  --marketing-orange-2-fixed: #f9ded6;
+  --marketing-orange-3-fixed: #f3bcab;
+  --marketing-orange-4-fixed: #ec9b81;
+  --marketing-orange-5-fixed: #e47d5a;
+  --marketing-orange-6-fixed: #dd6034;
+  --marketing-orange-7-fixed: #d74611;
+
+  --marketing-purple-1-fixed: #f5f0ff;
+  --marketing-purple-2-fixed: #e7dbfd;
+  --marketing-purple-3-fixed: #d0baf7;
+  --marketing-purple-4-fixed: #ba9af1;
+  --marketing-purple-5-fixed: #a57bec;
+  --marketing-purple-6-fixed: #915de6;
+  --marketing-purple-7-fixed: #7f42e1;
+
+  --marketing-teal-1-fixed: #e6f7fa;
+  --marketing-teal-2-fixed: #cdecf1;
+  --marketing-teal-3-fixed: #9fd2da;
+  --marketing-teal-4-fixed: #75b7c1;
+  --marketing-teal-5-fixed: #529da9;
+  --marketing-teal-6-fixed: #348490;
+  --marketing-teal-7-fixed: #1d6b77;
+
+  /* Legacy alias */
+  --marketing-purple-2: var(--marketing-purple-2-fixed);
+
+  --category-sand: #de9c7e;
+  --category-coral: #e59594;
+  --category-flamingo: #d796c1;
+  --category-orchid: #c799df;
+  --category-amethyst: #b79fe9;
+  --category-lavender: #a8a3f1;
+  --category-indigo: #95aee2;
+  --category-sky: #82bad4;
+  --category-mint: #82bebe;
+  --category-emerald: #91c089;
+
+  --translucent-primitives-secondary: #191919a6;
+  --translucent-primitives-neutral-4: #19191973;
+  --translucent-primitives-neutral-3: #19191940;
+  --translucent-primitives-neutral-2: #19191933;
+  --translucent-primitives-neutral-1: #19191926;
+
+  --state-bg-brand-active: #9b7ef1;
+  --state-bg-default-active: #e1e1e1;
+  --state-container-transparent-1-active: #1919191a;
+  --state-container-transparent-2-active: #19191926;
+
+  --extended-popup-primary-elevation-1: #ffffff;
+  --extended-popup-primary-elevation-2: #ffffff;
+  --extended-popup-primary-elevation-3: #ffffff;
+  --extended-popup-secondary-elevation-1: #f9f9f9;
+  --extended-popup-secondary-elevation-2: #f9f9f9;
+  --extended-popup-secondary-elevation-3: #f9f9f9;
+
+  --bg-demo: #fafafa;
+}

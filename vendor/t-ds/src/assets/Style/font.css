@@ -1,0 +1,396 @@
+:root {
+  --font-family-tt-norms-tochka-extended: "TT Norms Tochka Extended", sans-serif;
+  --font-family-tochka-script: "Tochka Script", cursive;
+}
+
+@font-face {
+  font-family: "TT Norms Tochka Extended";
+  src: url("../Font/TT_Norms_Tochka_Extended_Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms Tochka Extended";
+  src: url("../Font/TT_Norms_Tochka_Extended_Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms Tochka Extended";
+  src: url("../Font/TT_Norms_Tochka_Extended_DemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tochka Script";
+  src: url("../Font/TochkaScript-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ts-600-7xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: 0;
+}
+
+.ts-600-6xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.ts-600-5xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: 0;
+}
+
+.ts-600-4xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.ts-600-3xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.ts-600-2xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.ts-600-xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.ts-600-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+.ts-600-m {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.ts-600-s {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}
+
+.ts-600-xs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+}
+
+.ts-600-xxs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.01em;
+}
+
+.ts-500-7xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: 0;
+}
+
+.ts-500-6xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.ts-500-5xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: 0;
+}
+
+.ts-500-4xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.ts-500-3xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.ts-500-2xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.ts-500-xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.ts-500-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+.ts-500-m {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.ts-500-s {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}
+
+.ts-500-xs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+}
+
+.ts-500-xxs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.01em;
+}
+
+.ts-400-7xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: 0;
+}
+
+.ts-400-6xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.ts-400-5xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: 0;
+}
+
+.ts-400-4xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.ts-400-3xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.ts-400-2xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.ts-400-xl {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.ts-400-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+.ts-400-m {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.ts-400-s {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}
+
+.ts-400-xs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+}
+
+.ts-400-xxs {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.01em;
+}
+
+.ts-script-400-7xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-6xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-5xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-4xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-3xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-2xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-xl {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-l {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+.ts-script-400-m {
+  font-family: var(--font-family-tochka-script);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}

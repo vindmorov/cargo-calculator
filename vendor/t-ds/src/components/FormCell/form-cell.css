@@ -1,0 +1,132 @@
+.form-cell {
+  --form-cell-padding-x: var(--spacing-5x);
+  --form-cell-padding-y: var(--spacing-3-5x);
+  --form-cell-gap-left: var(--spacing-5x);
+  --form-cell-gap-right: var(--spacing-3-5x);
+  --form-cell-surface: var(--container-transparent-1);
+  --form-cell-divider-color: var(--container-transparent-1);
+  --form-cell-radius: var(--rounding-3x);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--form-cell-padding-x);
+  background: var(--form-cell-surface);
+}
+
+.form-cell--single {
+  border-radius: var(--form-cell-radius);
+}
+
+.form-cell--stack-top {
+  border-radius: var(--form-cell-radius) var(--form-cell-radius) 0 0;
+}
+
+.form-cell--stack-middle {
+  border-radius: 0;
+}
+
+.form-cell--stack-bottom {
+  border-radius: 0 0 var(--form-cell-radius) var(--form-cell-radius);
+}
+
+.form-cell__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 0;
+  align-items: center;
+  width: 100%;
+  padding: var(--form-cell-padding-y) 0;
+}
+
+.form-cell__main {
+  grid-column: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.form-cell--stack-middle .form-cell__main::before,
+.form-cell--stack-bottom .form-cell__main::before {
+  position: absolute;
+  top: calc(var(--form-cell-padding-y) * -1);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--form-cell-divider-color);
+  content: "";
+}
+
+.form-cell__left {
+  display: flex;
+  align-items: center;
+  padding-right: var(--form-cell-gap-left);
+}
+
+.form-cell__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.form-cell__text--dual {
+  gap: var(--spacing-0-5x);
+}
+
+.form-cell__title,
+.form-cell__subtitle,
+.form-cell__description {
+  margin: 0;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+}
+
+.form-cell__title {
+  color: var(--primitive-primary);
+}
+
+.form-cell__subtitle,
+.form-cell__description {
+  color: var(--primitive-secondary);
+}
+
+.form-cell__right {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-left: var(--form-cell-gap-right);
+}
+
+.form-cell__control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+}
+
+.form-cell__control .checkbox,
+.form-cell__control .radio {
+  flex-shrink: 0;
+}
+
+.form-cell__control .switch {
+  flex-shrink: 0;
+}
+
+.form-cell-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6x);
+  width: 100%;
+}
+
+.form-cell-preview__group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
