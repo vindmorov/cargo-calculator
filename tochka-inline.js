@@ -442,7 +442,12 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
   setTimeout(boot, 500);
   let scheduled = false;
-  new MutationObserver(() => {
+  new MutationObserver((mutations) => {
+    const onlyVatChoiceChanges = mutations.every((mutation) => {
+      const target = mutation.target instanceof Element ? mutation.target : null;
+      return Boolean(target?.closest('#flow-step-1 .choice-grid--compact'));
+    });
+    if (onlyVatChoiceChanges) return;
     if (scheduled) return;
     scheduled = true;
     setTimeout(() => { scheduled = false; boot(); }, 0);
