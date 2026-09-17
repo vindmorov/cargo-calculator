@@ -206,14 +206,61 @@
   box-shadow: var(--Card);
 }
 
-#flow-step-1 .choice-card:not(.is-selected) {
+#flow-step-1 .choice-card:not(.is-selected):not(.chip) {
   background: var(--container-transparent-1);
   box-shadow: none;
 }
 
-#flow-step-1 .choice-card:not(.is-selected):hover {
+#flow-step-1 .choice-card:not(.is-selected):not(.chip):hover {
   background: var(--state-container-transparent-1-active);
   box-shadow: none;
+}
+
+/* VAT choices use the vendored Tочка Chip component (chip.css), while
+   retaining the original radio semantics and React event handlers. */
+#flow-step-1 .choice-grid--compact [role="radio"] {
+  --chip-bg:var(--container-transparent-1);
+  --chip-bg-hovered:var(--state-container-transparent-1-active);
+  --chip-bg-selected:var(--bg-brand);
+  --chip-bg-selected-hovered:var(--state-bg-brand-active);
+  --chip-color:var(--primitive-primary);
+  --chip-border-color:transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--spacing-2x);
+  box-sizing:border-box;
+  height:32px;
+  min-height:32px;
+  padding:var(--spacing-1-5x) var(--spacing-2-5x);
+  border:2px solid var(--chip-border-color);
+  border-radius:var(--rounding-2-5x);
+  background:var(--chip-bg);
+  color:var(--chip-color);
+  cursor:pointer;
+  box-shadow:none !important;
+  transform:none !important;
+  transition:background-color .12s cubic-bezier(.34,.09,.34,.83),color .12s cubic-bezier(.34,.09,.34,.83),border-color .12s cubic-bezier(.34,.09,.34,.83) !important;
+}
+#flow-step-1 .choice-grid--compact [role="radio"]:hover {
+  background:var(--chip-bg-hovered);
+}
+#flow-step-1 .choice-grid--compact [role="radio"].is-selected,
+#flow-step-1 .choice-grid--compact [role="radio"][aria-checked="true"] {
+  background:var(--chip-bg-selected);
+  color:var(--primitive-default);
+  border-color:transparent;
+}
+#flow-step-1 .choice-grid--compact [role="radio"].is-selected:hover,
+#flow-step-1 .choice-grid--compact [role="radio"][aria-checked="true"]:hover {
+  background:var(--chip-bg-selected-hovered);
+}
+#flow-step-1 .choice-grid--compact [role="radio"].is-selected .choice-card__title,
+#flow-step-1 .choice-grid--compact [role="radio"][aria-checked="true"] .choice-card__title {
+  color:var(--primitive-default) !important;
+}
+#flow-step-1 .choice-grid--compact [role="radio"] .choice-card__title {
+  font-size:14px;
 }
 
 #flow-step-1 .costs-hint__item:first-child .costs-hint__value--user {
@@ -894,8 +941,8 @@ main.app-stack .page-heading__copy > p:nth-of-type(2) { display:none !important;
 @media (max-width: 720px) {
   .tochka-result-redesign .widget__content { padding:16px 20px 20px; gap:16px; }
   .tochka-result-status { padding:16px; }
-  .tochka-result-status strong { font-size:20px; }
-  .tochka-result-status p { font-size:14px; }
+  .tochka-result-status strong { font-size:16px; }
+  .tochka-result-status p { font-size:16px; }
   .tochka-result-hero__title { font-size:20px; }
   .tochka-result-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
   .tochka-result-metrics strong { font-size:24px; }
