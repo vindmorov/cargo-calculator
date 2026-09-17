@@ -341,7 +341,7 @@
    selected and adjusted directly in the browser annotations. */
 .page-heading__question--wide {
   display:block;
-  height:64px;
+  height:auto;
   font-size:48px;
   line-height:64px;
 }
@@ -805,8 +805,8 @@ main.app-stack .page-heading__copy > p:nth-of-type(2) { display:none !important;
 .page-heading__question--narrow { display:none !important; }
 .tochka-result-redesign p.margin-scale__axis-label { display:none !important; }
 
-@media (max-width:600px) {
-  .page-heading__question--wide { font-size:40px; height:127px; }
+@media (max-width:700px) {
+  .page-heading__question--wide { font-size:40px; }
 }
 .tochka-result-metrics strong.is-profitable { color:#198754; }
 .tochka-result-metrics strong.is-loss { color:#d95750; }
@@ -904,6 +904,8 @@ main.app-stack .page-heading__copy > p:nth-of-type(2) { display:none !important;
 .inline-cost-editor__actions button:last-child { background:var(--primitive-brand); color:#fff; }
 @media (max-width:700px){ .inline-cost-editor__fields{grid-template-columns:1fr;} }
 #flow-step-item-1.is-inline-editing .flow-panel > button.button--primary { display:none; }
+#flow-step-item-1.is-inline-editing .costs-overview__edit,
+#flow-step-item-1.is-inline-editing .inline-summary-tags { display:none !important; }
 
 /* Real summary chips (not pseudo-content): typography can be edited safely. */
 #flow-step-item-1 .inline-summary-tags { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
@@ -1233,8 +1235,8 @@ main.app-stack .page-heading__copy > p:nth-of-type(2) { display:none !important;
     margin-top:16px;
   }
   #flow-step-item-2.flow-step--collapsed .flow-step__header--button::before {
-    left: 48px;
-    top: -44px;
+    left: 40px;
+    top: -48px;
     white-space: nowrap;
   }
 }
