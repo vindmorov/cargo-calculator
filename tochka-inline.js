@@ -89,6 +89,19 @@
     const rate = document.querySelector('#flow-step-item-2 .trip-pair--rate');
     const options = document.querySelector('#flow-step-item-2 .trip-options');
     if (!route || !pair || !addPoint || !rate || !options) return;
+    // Keep the rate row independent from the generic route pair. The shared
+    // `trip-pair` class applies a two-column layout that collapses badly on
+    // narrow screens; this row has its own responsive grid.
+    rate.classList.remove('trip-pair');
+    rate.classList.add('trip-pair--rate');
+    const vatControl = rate.querySelector('.dropdown');
+    if (vatControl && !rate.parentElement.querySelector('.trip-vat-field')) {
+      const vatField = document.createElement('div');
+      vatField.className = 'trip-vat-field';
+      vatField.append(vatControl);
+      const summaryContainer = rate.closest('.tochka-trip-summary') || rate.parentElement;
+      summaryContainer.insertBefore(vatField, rate.nextSibling);
+    }
     const metricSource = route.querySelector('.route-distance-field__fill') || route;
     const metrics = [...metricSource.querySelectorAll('.route-distance-field__metric')].map((item) => item.textContent.trim());
     const rawDistance = metrics.find((item) => item.includes('км'));
@@ -128,7 +141,11 @@
     title.textContent = 'Итоговое расстояние и ставка';
     const summary = document.createElement('div');
     summary.className = 'tochka-trip-summary';
-    summary.append(distanceField, rate);
+    const rateControl = rate.querySelector('.input') || rate.firstElementChild;
+    if (rateControl) rateControl.classList.add('trip-rate-field');
+    const vatField = document.querySelector('#flow-step-item-2 .trip-vat-field');
+    summary.append(distanceField, rateControl || rate, vatField || document.createElement('div'));
+    if (rateControl) rate.remove();
     route.remove();
     options.insertAdjacentElement('afterend', title);
     title.insertAdjacentElement('afterend', summary);
@@ -143,7 +160,7 @@
       const label = chip.textContent.trim().replace(/^\+\s*/, '');
       const isSelected = chip.classList.contains('is-selected');
       const cell = document.createElement('div');
-      cell.className = `form-cell tochka-form-cell tochka-option-${index} ${index === 0 ? 'form-cell--stack-bottom' : 'form-cell--single'}`;
+      cell.className = `form-cell tochka-form-cell tochka-option-${index} form-cell--single`;
       cell.dataset.tochkaFormCell = 'true';
       cell.innerHTML = `<div class="form-cell__content"><div class="form-cell__main"><div class="form-cell__text"><p class="form-cell__title ts-400-m">${label}</p></div></div><div class="form-cell__right"><button type="button" class="switch${isSelected ? ' is-selected' : ''}" role="switch" aria-checked="${isSelected}" aria-label="${label}"></button></div></div>`;
       const mileageField = index === 0 ? document.createElement('label') : null;
@@ -162,6 +179,11 @@
         if (mileageField) {
           cell.classList.toggle('is-selected', next);
           mileageField.hidden = !next;
+          if (next) {
+            const mileageInput = mileageField.querySelector('input');
+            mileageInput?.blur();
+            requestAnimationFrame(() => mileageInput?.blur());
+          }
         }
       });
       cell.addEventListener('click', () => toggle.click());
@@ -170,6 +192,21 @@
     if (options && !options.querySelector('.tochka-options-title')) {
       const title = document.createElement('h3'); title.className = 'tochka-options-title ts-500-l'; title.textContent = 'Дополнительные условия';
       options.prepend(title);
+    }
+    if (!document.documentElement.dataset.tochkaMileageBlur) {
+      document.documentElement.dataset.tochkaMileageBlur = 'true';
+      document.addEventListener('pointerdown', (event) => {
+        const mileageInput = document.querySelector('.tochka-empty-mileage-input input');
+        if (mileageInput && event.target instanceof Node && !mileageInput.closest('.tochka-empty-mileage-input')?.contains(event.target)) {
+          mileageInput.blur();
+        }
+      }, true);
+      document.addEventListener('click', (event) => {
+        const mileageInput = document.querySelector('.tochka-empty-mileage-input input');
+        if (mileageInput && event.target instanceof Node && !mileageInput.closest('.tochka-empty-mileage-input')?.contains(event.target)) {
+          requestAnimationFrame(() => mileageInput.blur());
+        }
+      }, true);
     }
   }
 
@@ -211,7 +248,7 @@
     status.className = `tochka-result-status ${isLoss ? 'is-loss' : 'is-profitable'}`;
     let statusIcon = isLoss
       ? '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.50358 4.17608C10.0276 1.43285 13.9727 1.43284 15.4967 4.17608L22.0973 16.0579C23.578 18.7238 21.6508 22 18.6012 22.0003H5.39909C2.34948 22.0002 0.421591 18.7239 1.90202 16.0579L8.50358 4.17608ZM13.7487 5.14678C12.9867 3.77538 11.0137 3.7755 10.2516 5.14678L3.65104 17.0286C2.91084 18.3616 3.87432 20.0002 5.39909 20.0003H18.6012C20.1258 20 21.0894 18.3615 20.3493 17.0286L13.7487 5.14678ZM11.9997 16.0003C12.5519 16.0004 12.9997 16.448 12.9997 17.0003C12.9994 17.5523 12.5517 18.0002 11.9997 18.0003C11.4478 18 11 17.5522 10.9997 17.0003C10.9997 16.4482 11.4476 16.0005 11.9997 16.0003ZM11.9997 8.0003C12.5519 8.00036 12.9997 8.44805 12.9997 9.0003V13.0003C12.9994 13.5523 12.5517 14.0002 11.9997 14.0003C11.4478 14 11 13.5522 10.9997 13.0003V9.0003C10.9997 8.44817 11.4476 8.00055 11.9997 8.0003Z"/></svg>'
-      : '✓';
+      : '<img class="tochka-result-status__check-icon" src="Circle.svg" width="18" height="18" alt="" aria-hidden="true">';
     if (isLoss) statusIcon = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="#d95750"/><path d="M12 7.5a1 1 0 0 1 1 1v4.25a1 1 0 1 1-2 0V8.5a1 1 0 0 1 1-1Zm0 9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" fill="#fff"/></svg>';
     status.innerHTML = `<span class="tochka-result-status__icon ds-icon ds-icon--m" aria-hidden="true">${statusIcon}</span><div><strong>${isLoss ? 'Рейс убыточный' : 'Рейс выгодный'}</strong><p>${isLoss ? 'Ставка ниже рекомендуемого уровня рентабельности для такого рейса.' : 'Рентабельность выше минимального рекомендуемого уровня для такого рейса.'}</p></div>`;
 
@@ -230,13 +267,29 @@
 
     const hero = document.createElement('div');
     hero.className = `tochka-result-hero ${isLoss ? 'is-loss' : 'is-profitable'}`;
-    hero.innerHTML = `<p class="tochka-result-hero__eyebrow">ПРИБЫЛЬ С РЕЙСА</p><strong>${profitValue}</strong><p>из ставки клиента ${rateValue}</p>`;
+    hero.innerHTML = `<h3 class="tochka-result-hero__title">Расчёты из ставки клиента ${rateValue}</h3>`;
+    hero.append(status);
     const metrics = document.createElement('div');
     metrics.className = 'tochka-result-metrics';
-    metrics.innerHTML = `<div><span>СЕБЕСТОИМОСТЬ</span><strong>${costValue}</strong></div><div><span>РЕНТАБЕЛЬНОСТЬ</span><strong class="${isLoss ? 'is-loss' : 'is-profitable'}">${marginValue}</strong></div><div><span>ПРИБЫЛЬ НА КМ</span><strong>${perKm}</strong></div>`;
+    metrics.innerHTML = `<div><span>Прибыль с рейса</span><strong class="${isLoss ? 'is-loss' : 'is-profitable'}">${profitValue}</strong></div><div><span>Себестоимость</span><strong>${costValue}</strong></div><div><span>Рентабельность</span><strong>${marginValue}</strong></div><div><span>Прибыль на км.</span><strong>${perKm}</strong></div>`;
+    hero.append(metrics);
 
     const costBlock = blocks.querySelector('.result-subblock--cost');
     const breakdown = costBlock?.querySelector('.cost-breakdown');
+    if (breakdown) hero.append(breakdown);
+    const expensesNotice = breakdown?.querySelector('.breakdown-source-notice');
+    const costChart = breakdown?.querySelector('.cost-chart');
+    if (expensesNotice && costChart) {
+      costChart.insertAdjacentElement('afterend', expensesNotice);
+      const editLink = expensesNotice.querySelector('.inline-link');
+      const noticeText = expensesNotice.querySelector('.contextual-notification__text');
+      const noticeIcon = expensesNotice.querySelector('.contextual-notification__accessory .ds-icon');
+      if (editLink && noticeText) {
+        editLink.textContent = 'Настройте затраты';
+        noticeText.replaceChildren(document.createTextNode('Рассчитано по данным в настройках затрат, чтобы уточнить расчёт'), editLink);
+      }
+      if (noticeIcon) noticeIcon.innerHTML = '<img class="tochka-notice-info-icon" src="Circle-info.svg" width="18" height="18" alt="" aria-hidden="true">';
+    }
     if (breakdown && !breakdown.querySelector('.tochka-expenses-title')) {
       const expensesTitle = document.createElement('h3');
       expensesTitle.className = 'tochka-expenses-title ts-600-xl';
@@ -247,20 +300,32 @@
     }
     if (breakdown && !breakdown.dataset.tochkaCollapseBound) {
       breakdown.dataset.tochkaCollapseBound = 'true';
-      breakdown.classList.add('tochka-expenses-open');
-      const toggleExpenses = () => breakdown.classList.toggle('tochka-expenses-collapsed');
+      breakdown.classList.add('tochka-expenses-open', 'tochka-expenses-collapsed');
+      const nativeToggle = breakdown.querySelector('.accordeon-cell__header');
+      const syncExpensesChevron = () => {
+        const icon = breakdown.querySelector('.tochka-expenses-chevron');
+        const collapsed = nativeToggle ? !breakdown.classList.contains('is-open') : breakdown.classList.contains('tochka-expenses-collapsed');
+        breakdown.classList.toggle('tochka-expenses-collapsed', collapsed);
+        const body = breakdown.querySelector('.accordeon-cell__body');
+        if (icon) icon.style.transform = collapsed ? 'none' : 'rotate(180deg)';
+        if (body) body.style.display = collapsed ? 'none' : '';
+        breakdown.querySelector('.tochka-expenses-title')?.setAttribute('aria-expanded', String(!collapsed));
+      };
+      const toggleExpenses = () => { if (nativeToggle) nativeToggle.click(); setTimeout(syncExpensesChevron, 0); };
+      syncExpensesChevron();
       breakdown.querySelector('.tochka-expenses-title')?.addEventListener('click', (event) => { event.stopPropagation(); toggleExpenses(); });
       breakdown.querySelector('.tochka-expenses-title')?.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleExpenses(); } });
       breakdown.addEventListener('click', (event) => { if (breakdown.classList.contains('tochka-expenses-collapsed') && !event.target.closest('.tochka-expenses-title')) toggleExpenses(); });
     }
-    const breakdownToggle = breakdown?.querySelector('.accordeon-cell__header');
-    if (breakdownToggle && !breakdown.classList.contains('is-open')) {
-      setTimeout(() => breakdownToggle.click(), 0);
-    }
 
-    content.prepend(metrics);
     content.prepend(hero);
-    content.prepend(status);
+  }
+
+  function normalizePageHeading() {
+    const wideTitle = document.querySelector('.page-heading__question--wide');
+    if (wideTitle && wideTitle.textContent.trim() !== 'Вы зарабатываете на рейсе?') {
+      wideTitle.textContent = 'Вы зарабатываете на рейсе?';
+    }
   }
 
   function renderEditor(card) {
@@ -372,6 +437,7 @@
     normalizeTripOptions();
     normalizeCollapsedTripSummary();
     normalizeResults();
+    normalizePageHeading();
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
   setTimeout(boot, 500);
